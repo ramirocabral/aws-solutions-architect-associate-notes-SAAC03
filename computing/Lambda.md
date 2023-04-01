@@ -24,7 +24,7 @@ AWS Lambda means you dont care about any infrastructure, you just upload a funct
 
 ### Lambda authorizer
 - Send additonal info based of bearer token or request context
-- Is useful because you can skip having too lookup users inside of your function  (you pass the user data)
+- Is useful because you can skip having to lookup users inside of your function (you pass the user data)
 - Dont pass credentials! (Though you could)
 
 ## Compute Power
@@ -37,14 +37,16 @@ AWS Lambda means you dont care about any infrastructure, you just upload a funct
 - Unzipped size cannot exeed 250mb for a function and all layers which it depends on
 
 ## Container Image
-- If using an image the image must implement the  [[Lambda]] runtime api
+- If using an image the image must implement the [[Lambda]] runtime api
 - [[ECS]] and Fargate are prefered for this use case
 
 ## Price
 - Pay per call first 1 mill are free
 - 0.20 cent per one million request after
-- Pay per duration 400000GB-Seconds per month free
+- Pay per duration 400000GB-Seconds per month free (1)
 - Price scales up after that depending on gbseconds (more will be cheaper per gbsecond)
+
+(1): GBs = amount of ram multiplied by execution time
 
 ## Limits Per Region
 

@@ -10,6 +10,8 @@ The AWS CLI can be used to create, change or delete ressources and services in A
 - Access Key ID: Username 
 - Secret Access Key: PW
 - Need to specifiy correct region
+- Can use profiles
+
 ``` bash
 # set access key once for all future CLI commands
 aws configure 

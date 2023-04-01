@@ -2,7 +2,7 @@
 # Elastic Compute Cloud
 
 ## TLDR
-EC2 is a the combination of a virtual mashine and hardware capacity attached to that vm in AWS. It is one of the oldest services and well integrated into most other services.
+EC2 is a the combination of a virtual mashines and hardware capacity attached to that vm in AWS. It is one of the oldest services and well integrated into most other services.
 
 ## Virtual Machines (EC2)
 
@@ -17,7 +17,7 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 - Bootstrap script (User Data)
 
 ### User Data
-- Is a script is run once on the first start of the instance
+- Is a script that runs once on the first start of the instance
 - Script is run using root privileges
 
 ### Use Cases
@@ -54,11 +54,11 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 - In memory databases 
 - Real time proccessing of big unstructured data
 
-##### Storage Optimzied
+##### Storage Optimized
 - High amount of Disk IOPs
 
 ###### Use Cases
-- Alot of Datasets in local storage
+- A lot of Datasets in local storage
 - High frequency online transaction processing systems
 - Databases
 - Cache for in mem databases (e.g. redis)
@@ -81,7 +81,7 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 - Scope reserve in zone and AZ
 - You can sell peer to peer in marketplace
 
-#### Convertiable
+#### Convertible
 - More expensive than default
 - Can change instance type, os, region, tenacy
 
@@ -102,7 +102,7 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 - Short workloads
 - Suited for resiliant jobs
 - Distributed workloads (these are resiliant by definition)
-- batch jobs
+- Batch jobs
 
 ### Dedicated Hosts
 - Rent an entire physical server, control placement of that server
@@ -116,7 +116,7 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 
 ### Dedicated Instances
 - No other customer will share the hardware used by you
-- Hardeware may be shared within same account
+- Hardware may be shared within same account
 - No control over instance placement (hardware might be moved)
 - can convert to dedicated host
 
@@ -151,7 +151,7 @@ EC2 is a the combination of a virtual mashine and hardware capacity attached to 
 
 ## Elastic Ip
 - A static ip which can be attached to Elastic Network Interfaces and other services
-- Used to mask a fail by keeping ip but changing mashine
+- Used to mask a fail by keeping ip but changing machine
 - Up to 5 per account
 - Can request more than 5 from aws
 
@@ -160,7 +160,7 @@ Placement strategy for a group ec2 instances
 
 ### Spread
 - Multi AZ 
-- Diffrent hardware
+- Different hardware
 - Limited to 7 instances per AZ per placement group
 - Use for critical apps and high availability
 

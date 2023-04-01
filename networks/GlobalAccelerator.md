@@ -22,7 +22,7 @@ UDP compatible global endpoint to speed up networkt traffic to your VPC by using
 
 ## Health Checks
 - failover less than 1 min unhealty
-- good disater recovery
+- good for disaster recovery
 
 ## Security
 - only 2 external ips need to be whitelisted

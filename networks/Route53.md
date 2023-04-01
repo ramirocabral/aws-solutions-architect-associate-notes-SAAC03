@@ -8,7 +8,7 @@ AWS Nameserver and Domain Name register Service.
 - managed
 - scalable
 - authorative dns (can be updated by customer)
-- registar ( can register own names)
+- registar (can register own names)
 - 100% availabilty
 - health checks
 
@@ -36,15 +36,15 @@ AWS Nameserver and Domain Name register Service.
 
 #### Alias
 - can target a root domain (cname can not)
-- can only be used for aws ressources
+- can only be used for aws resources
 
 ## Endpoint types
 
 ### Outbound
-- used by ressources in [[VPC]] to resolve dns querys to ressources outside of the [[VPC]]  (e.g. on premise)
+- used by resources in [[VPC]] to resolve dns querys to resources outside of the [[VPC]]  (e.g. on premise)
 
 ## Inbound
-- used by ressources outside of aws to resolve name to ressources inside a [[VPC]]
+- used by resources outside of aws to resolve name to resources inside a [[VPC]]
 
 ## Routing Types
 

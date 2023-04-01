@@ -2,16 +2,16 @@
 # Application Discovery Service
 
 ## TLDR
-Scan your on premise machines and network. Upload the gained information to AWS in preparation for a migaration of **servers**.
+Scan your on premise machines and network. Upload the gained information to AWS in preparation for a migration of **servers**.
 
 ## Types
 You can choose to install an AWS Agent on premise.
 
 ### Agentless Discovery
-- Get VM inventory, configuration and performance history
+- Get VM inventory, configuration and performance history. Works with only with VMWare.
 
 ### Agent Based Discovery
-- System configuration, system performance, running processes and detail aof the network connections between systems
+- System configuration, system performance, running processes and detail aof the network connections between systems. 
 
 ## Resulting Data
 - Can be viewed in AWS Migrations hub

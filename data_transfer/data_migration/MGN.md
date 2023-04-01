@@ -2,7 +2,8 @@
 # AWS Application Migration Service
 
 ## TLDR
-Is a service similar to [[DMS]] but it migrates Applications instead. (IDK how well this works honestly)
+Is a service similar to [[DMS]] but it migrates Applications instead. Lift and shift solution. Allows to move on-prem, containers or other cloud-based solutions to AWS easily and with little manual work (too good to be true?)
+Free for 90 days.
 
 ## Features
 - Rehost solution which simplfies migration applications to aws

@@ -1,4 +1,5 @@
 # Simple Email Service
+
 - fully managed global email service
 - allows inbound and outbound
 - dashboard features

@@ -10,7 +10,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 - real time data streaming service
 - gigabytes of data per second
 - 100ks of sources
-- 2MBs/shard default shared between all consumers of kinesis streaam
+- 2MBs/shard default shared between all consumers of kinesis streams
 - use enhanced fan out to support multiple consumers, each consumer gets the 2mbs/shard
 - 1mbs input per shard 
 - shards need to be provioned ahead of time
@@ -29,7 +29,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 - Producers can set 1mbs and 1000msg per sec per SHARD
 
 #### Consumer
-- recieves partion key, seceqnce number and blog
+- recieves partion key, secuence number and blob
 - thoughput 2mbs per sec shared for all consumers
 - enhances 2mb per sec per consumer
 - apps using sdk
@@ -70,7 +70,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 - Firehouse has a single target
 
 ## Firehouse
-- load steaming data into data stores/ lakes and analytic tools
+- load steaming data into data stores/lakes and analytic tools
 - serverless
 - scales to data throughput
 - aws managed
@@ -110,7 +110,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 ### Usage
 - Real Time anaytics
 
-## Data Anaytics for Appache Flink
+## Data Anaytics for Apache Flink
 - Use Flink (Java, Scala or SQL) to process or analyse streaming data
 - provison compute ressources
 - parallel computing
@@ -150,7 +150,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 #### Kinesis
 - standard 2mb per shard pull data
 - consumers can consume data concurrently
-- enhanced fan ut 2mb per shard per consumer , push data
+- enhanced fan ut 2mb per shard per consumer, push data
 - limited amount of consumers (by shard)
 - replay data
 - ment for real time big data

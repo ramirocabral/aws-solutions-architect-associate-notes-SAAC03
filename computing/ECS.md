@@ -7,7 +7,7 @@ ECS is AWS Docker Service. You can launch and modify containers as tasks in mult
 ## [[EC2]] Based
 - Need to have a running [[EC2]] as the host for your containers
 - You are billed for depending on the [[EC2]]
-- The [[EC2]] Instance must be running  the ecs agent
+- The [[EC2]] Instance must be running the ecs agent
 
 ## Fargate Based
 - Serverless
@@ -31,7 +31,7 @@ ECS is AWS Docker Service. You can launch and modify containers as tasks in mult
 ### Modes
 - Target tracking
 - Step caling
-- Scheduld scaling
+- Scheduled scaling
 
 ## Advanced Use Cases
 - Use [[EventBride]] or [[SQS]] to launch container, process tasks and shut down container afterwards

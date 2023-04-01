@@ -18,7 +18,7 @@ to manage and configure a multi account setup.
 - uses [[AWSOrganisations]] SCP
 - e.g. restrict regions across all accounts
 
-### Detective Guiardrail
+### Detective Guardrail
 - uses [[AWSConfig]]
 - e.g. identify untagged ressources
 

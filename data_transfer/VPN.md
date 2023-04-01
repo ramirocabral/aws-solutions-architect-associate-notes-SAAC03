@@ -2,11 +2,11 @@
 # VPN
 
 ## TLDR
-Access AWS Ressources in one or more  [[VPC]]s as if they were in your on premise network.
+Access AWS Ressources in one or more [[VPC]]s as if they were in your on premise network.
 
 ## Design
-- Use non overlapping ip ranges for each network
-- Use Transit Gateway to increase throughput for a single site, this allow multipath routing using aditional vpn tunnelds
+- Use non-overlapping ip ranges for each network
+- Use Transit Gateway to increase throughput for a single site, this allow multipath routing using aditional vpn tunnels
 
 ## Options
 
@@ -23,7 +23,7 @@ Access AWS Ressources in one or more  [[VPC]]s as if they were in your on premis
 - Static routes, Border Gateway Protocol, peering and routing policies
 - single [[VPC]] target
 
-#### Con
+#### Cons
 - Network latency
 - variablity
 - depending on internet
@@ -43,7 +43,7 @@ Access AWS Ressources in one or more  [[VPC]]s as if they were in your on premis
 - up to 5k attachments for the transit gateway
 
 #### Cons
-- same as AWS Manged VPN
+- same as AWS Managed VPN
 
 ### AWS [[DirectConnect]]
 - Dedicated network connection over private lines
@@ -88,9 +88,9 @@ Access AWS Ressources in one or more  [[VPC]]s as if they were in your on premis
 - connect remote to remote to remote to vpn
 
 #### Pros
-- Reusus exsiting internet connection and AWS VPN connections
+- Reuses existing internet connection and AWS VPN connections
 - AWS managed and highly available
-- Supports BGP for exchaning routes and routing policies
+- Supports BGP for exchanging routes and routing policies
 
 #### Cons 
 - Network latency

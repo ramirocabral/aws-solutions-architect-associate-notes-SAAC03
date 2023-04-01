@@ -1,13 +1,14 @@
 # Amazon Managed Streaming
 - alternative to Kinesis
-- Fully managed apache Kafka on AWS
+- Fully managed Apache Kafka on AWS
 - cluster
+
 ## MSK Serverless
 - no provisioning
 - automatic scaling
 
 ## Diffrence to Kinesis
-- Kinesis 1 MB limit per mssg, msk 10 mb
+- Kinesis 1 MB limit per msg, msk 10 mb
 - kinesis shard, kafka topics
 - kafka doesnt enforce ssl
 - kafka can only add partions to a topic

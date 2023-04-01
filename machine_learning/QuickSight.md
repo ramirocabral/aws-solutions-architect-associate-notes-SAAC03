@@ -2,7 +2,7 @@
 # QuickSight
 
 ## TLDR
-Quicksight is an interactive dashboard for buisness intelligence, leveragin an AI and serverless architecture.
+Quicksight is an interactive dashboard for buisness intelligence, leveraging an AI and serverless architecture.
 
 ## Dashboard
 - define users

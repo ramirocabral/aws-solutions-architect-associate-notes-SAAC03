@@ -106,7 +106,7 @@ AWS IAM is a global service. Its used in nearly all other services to control pe
 - target a single user or ressource and get the info of all service permissions and when that service was lastly accessed
 - can be used to revise policies and roles
 
-## Roles vs Ressource Based Policies
+## Roles vs Resource Based Policies
 - when you assume a role, you give up all previous persmissions
 - Ressource based if a Iam entity needs to do multiple things on diffrent accounts
 

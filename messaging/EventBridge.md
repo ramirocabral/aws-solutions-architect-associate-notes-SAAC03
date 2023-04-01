@@ -1,8 +1,8 @@
 ![[Pasted image 20221101205129.png]]
-# EventBride
+# EventBrigde
 
 ## TLDR
-Central message service with the most amount of targets. Is used by aws behind the scenes alot
+Central message service with the most amount of targets. Is used by aws behind the scenes a lot
 
 ## Features
 - schedule (cron jobs)
@@ -34,6 +34,7 @@ Central message service with the most amount of targets. Is used by aws behind t
 - [[SSM]]
 - 3rd Party
 - ...
+
 ## Event Buses
 - supports resource based policies
 - can allow events from other accounts

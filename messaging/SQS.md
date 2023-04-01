@@ -7,13 +7,13 @@ AWS standard queue service. Has ton of features like fifo and multi consumer. Sc
 ## Features
 - aws managed
 - async systems
-- decouplein
+- decoupleing
 - message delay up to 15 min
 - unlimited throughput 
 - unlimited numer of messages
 - default retention 4 days, max 14 days
 - max size 256kbs
-- dynamicly add concurrency/ read throughput
+- dynamicaly add concurrency/ read throughput
 - track ack/fail 
 - set visibilty timeout for ack/fail
 - scale transparently

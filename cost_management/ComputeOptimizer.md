@@ -6,5 +6,5 @@ This is a tool to help you not over or under provision on compute ressources ([[
 
 ## Features
 - Recommends optimal compute ressources 
-- Uses mashine learning to give analysis and recommendations
+- Uses machine learning to give analysis and recommendations
 - Helps you choose [[EC2]] instance types

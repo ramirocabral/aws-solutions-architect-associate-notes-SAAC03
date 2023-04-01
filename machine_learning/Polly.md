@@ -12,7 +12,7 @@ This is the oposite of [[Transcribe]] , it does text to speach.
 - fix stylized words (e.g. n00b)
 - say full names instead of acronyms (AWS to Amazon Web Services)
 
-## SSMl Sythesis Markup Language
+## SSML Sythesis Markup Language
 - enables more customization
 - use phanaic pronouciations
 - include breathing sound or whispering

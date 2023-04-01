@@ -6,7 +6,7 @@ Similar to [[Cognito]] but for access and auth to AWS itself, rather then Applic
 
 ## Feature
 - One Login SSO for all your AWS Accounts
-- SSO for buisness cloud application
+- SSO for business cloud application
 - Support SAML2.0 enabled applications
 - Can be used to grant access to [[EC2]] Windows Instances (remote working PCs)
 

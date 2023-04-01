@@ -5,7 +5,7 @@
 Anaysle and recoginze objects or themes in images or videos.
 
 ## Features
-- facial analysis and facial serach
+- facial analysis and facial search
 - user verification
 - people counting
 - create own database of own persons or use other db

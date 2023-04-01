@@ -39,15 +39,15 @@ Migrate an exsisting database into another one. Can also do DB shema conversion.
 - [[Redshift]]
 
 ## Limitations
-- Transfer from Aws service to aws service sometimes  but not always (e.g. RDS) needs to be in the same region and same account
+- Transfer from Aws service to aws service. Sometimes but not always (e.g. RDS) needs to be in the same region and same account
 
 ## Basic Schema copy
 - Create tables and indexes
-- Heterogenus migration ( Orcale to MySQL e.g.)
+- Heterogenus migration (Orcale to MySQL e.g.)
 
 ## Schema conversion tool
 - Transfer DB from one schema to another
-- Move stored procedures aswell
+- Move stored procedures as well
 
 ## [[RDS]] to [[Aurora]] MySQL
 

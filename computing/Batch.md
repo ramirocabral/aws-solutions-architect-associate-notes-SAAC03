@@ -2,11 +2,11 @@
 # AWS Batch
 
 ## TLDR
-AWS Batch is used to simplify big batch jobs at scale. It handles to provisioning of computing, orchisation and storage power at a higher level.
+AWS Batch is used to simplify big batch jobs at scale. It handles to provisioning of computing, orchestration and storage power at a higher level.
 
 ## Features
 - Fully managed batch processing at any scale
-- Run 100ks  of batch jobs
+- Run 100ks of batch jobs
 - Batch job has an start or end
 - Dynamicly launch [[EC2]] on-demand instances or spot instances
 - Can also use Fargate [[ECS]]

@@ -32,10 +32,10 @@
 - only from within your vpc
 - can use ressource policy
 
-## Authentification
+## Authentication
 - [[IAM]] Roles (for internal Application)
 - [[Cognito]] for External Users
-- Custom Autherized (using [[Lambda]] and own code)
+- Custom Authorized (using [[Lambda]] and own code)
 
 ### Custom Domanin  name HTTP Secuirty
 - use [[utils/ACM]] 
