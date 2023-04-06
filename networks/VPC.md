@@ -2,7 +2,7 @@
 # VPC Virtual Private Cloud
 
 ## TLDR
-A stack of AWS ressources, more clearly the connectivity and setup options for and between these ressources.
+A stack of AWS resources, more clearly the connectivity and setup options for and between these resources.
 
 ## Console Wizard
 
@@ -24,7 +24,7 @@ A stack of AWS ressources, more clearly the connectivity and setup options for a
 - private subnet
 - virtual private gatway
 - internet gateway
-- recommended to extend network into the cloud and some ressource are internet facing
+- recommended to extend network into the cloud and some resource are internet facing
 
 #### VPC with private subnet and AWS Site-to-Site [[VPN]]
 - private subnet
@@ -63,7 +63,7 @@ A stack of AWS ressources, more clearly the connectivity and setup options for a
 
 ## VPC Sharing
 - share one or more subnets within other accounts beloning to the same [[AWSOrganisations]]
-- every account can only work with the ressources they created
+- every account can only work with the resources they created
 
 ## VPC Flow Logs
 - Capture Information about IP traffic through your interfacines

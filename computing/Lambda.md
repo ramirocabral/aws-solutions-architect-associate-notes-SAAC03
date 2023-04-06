@@ -11,14 +11,14 @@ AWS Lambda means you dont care about any infrastructure, you just upload a funct
 - No charge if not running
 - Operates from AWS owned[[VPC]]
 - By default only public traffic
-- You can enable function [[VPC]] access if you need private ressources from your [[VPC]]
+- You can enable function [[VPC]] access if you need private resources from your [[VPC]]
 - Scale up based on request amount
 - Can set custom function timeout
 - Can be packaged and deployed as container images
 
 ## Drawbacks
 - Limited by time SHORT EXECUTIONS
-- if you need both private and public ressources, you will have to enable [[VPC]] access and use a nat gateway to access the internet
+- if you need both private and public resources, you will have to enable [[VPC]] access and use a nat gateway to access the internet
 
 ## Security
 

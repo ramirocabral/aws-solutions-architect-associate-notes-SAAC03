@@ -2,7 +2,7 @@
 # Elasticache
 
 ## TLDR
-Voliltile Caching Layer with high performance.
+Volaltile Caching Layer with high performance.
 
 ## Features
 - in memory data store

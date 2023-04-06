@@ -2,6 +2,7 @@
 - multi az
 - auto failover
 - read replicas
+
 ## Elasticcache for Redis
 - in-memory data store
 - sub-milisecond latency
@@ -9,10 +10,15 @@
 - supports replication, high availability and cluster sharding
 - HIPAA eligable 
 - PCI DSS compliant
+
 ## RedisAuth
-- use aa password before client  can execute commands
+- use aa password before client can execute commands
 
 ## Use cases 
+- cache
+- geolocation
+- key/value
+- session store with ttl
 
 ### Sorted sets
 - added elements are ranked and sorted in real time

@@ -43,9 +43,9 @@ AWS Created custom DB tech, very high performan. Useful for global and serverles
 - client talks to aurora proxy fleet
 
 ## Aurora multi master
-- all nodes are read write nodes there is no master
+- all nodes are read/write nodes there is no master
 - replication between all nodes
-- use for imediate failover
+- use for inmmediate failover
 
 ## Global Aurora Database
 - 1 primary region for read an write
@@ -53,7 +53,7 @@ AWS Created custom DB tech, very high performan. Useful for global and serverles
 - up to 16 read replicas for each read region
 - less than 1 second for replication across region
 
-## Aurora machine learing
+## Aurora machine learning
 - ML based predications to your apps via SQL
 
 ### Use cases

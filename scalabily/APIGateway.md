@@ -30,7 +30,7 @@
 
 ### Private
 - only from within your vpc
-- can use ressource policy
+- can use resource policy
 
 ## Authentication
 - [[IAM]] Roles (for internal Application)

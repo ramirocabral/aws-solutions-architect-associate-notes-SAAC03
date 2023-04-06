@@ -112,7 +112,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 
 ## Data Anaytics for Apache Flink
 - Use Flink (Java, Scala or SQL) to process or analyse streaming data
-- provison compute ressources
+- provison compute resources
 - parallel computing
 - automatic scaling
 - backups

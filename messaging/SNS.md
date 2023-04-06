@@ -47,7 +47,7 @@ Message queue with a subscriber model. It can send the same message to alot of d
 - at rest using [[KMS]]
 - client side optional
 - iam for access control
-- sns access policies, ressource based for cross account or other services
+- sns access policies, resource based for cross account or other services
 
 ## Fifo
 - same as [[SQS]] Fifo

@@ -13,4 +13,4 @@ Centraly manage firewall config and rules for [[AWSOrganisations]]
 
 ## Features
 - region level
-- automatic apply rules to new ressources
+- automatic apply rules to new resources

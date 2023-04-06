@@ -2,7 +2,7 @@
 # App Runner
 
 ## TLDR
-App Runner is a service similar to [[ElasticBeanstalk]]. It enabled developers to quickly deploy an application in AWS without having to manage any infrastructure or ressources.
+App Runner is a service similar to [[ElasticBeanstalk]]. It enabled developers to quickly deploy an application in AWS without having to manage any infrastructure or resources.
 
 ## Features
 - Deploy web apps and api at scale

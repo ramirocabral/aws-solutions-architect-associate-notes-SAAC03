@@ -45,7 +45,7 @@ High performance network file system which is pay per gb use and can attach to m
 ## Storage classes
 
 ### Storage Tiers
-- livecycle managemet for cost savings
+- lifecycle management for cost savings
 - uses livecycle policies
 
 #### Standard 
@@ -62,6 +62,6 @@ High performance network file system which is pay per gb use and can attach to m
 ### One Zone
 - one AZ
 - good for dev
-- compatible with infrequent acess ( for up to 90% in savings)
+- compatible with infrequent acess (for up to 90% in savings)
 - backup enabled by default
 

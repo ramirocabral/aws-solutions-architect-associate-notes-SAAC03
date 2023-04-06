@@ -17,18 +17,18 @@ This is network storage attached to an [[EC2]] instance.
 - can be modified while in use (iops and capacity)
 
 ## Snapshot
-- is a Backup, can be done durin attachment
-- Backups can be copied to diffrent region
+- is a Backup, can be done during attachment
+- Backups can be copied to different region
 - snapshot can be done while the volume is being used
 
 ### EBS Snapshot Archive
 - cheaper Snapshot storage but longer restore time
 
 ### EBS Recycle Bin
-- can enable recycle for recovery (retention 1day - 1 year)
+- can enable recycle for recovery (retention 1 day - 1 year)
 
 ### Fast Snapshot Restore (FSR)
-- cost alot
+- cost a lot
 - no latency with restore
 
 ## Volume types

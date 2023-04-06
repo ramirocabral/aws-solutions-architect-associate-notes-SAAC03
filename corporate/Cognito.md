@@ -8,7 +8,7 @@ Cognito is a Server which grants and manager access to your applications running
 
 ## User Pools
 - Is a User directory
-- You can use AWS build in user managment or use external (google, twitter facebook)
+- You can use AWS build in user management or use external (google, twitter facebook)
 - You can use the SDK to access directory profile
 - Easy sign up and sign in
 - Comes with a customizable web UI
@@ -23,5 +23,5 @@ Cognito is a Server which grants and manager access to your applications running
 
 ## Identity Pools
 - Maps an identify or a group to aws credentials
-- Provied aws credentials to grant access to aws ressources
+- Provied aws credentials to grant access to aws resources
 - Use user pool to authenticate, then use identify pools for granular access rights

@@ -1,5 +1,6 @@
 # Quantum Ledger Database
-- recording finical transactions
+- Blockchain
+- recording financial transactions
 - serverless
 - fully managed
 - hign available
@@ -9,4 +10,4 @@
 - review history of transactions
 - better performance than common ledger blockchain framings
 - use sql to gather data
-- no decentrailations
+- no decentralizations

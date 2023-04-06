@@ -23,7 +23,7 @@ Various  relational databases, manged by aws.
 ## Multi AZ
 - can be upgraded without downtime
 - one dns name
-- automatic failover to standby database by switching target ip of dns name
+- automatic failover to standby database by switching target ip or dns name
 - sync replication
 - one db will be standby
 - deactive automation mode and take snapshot before modify
@@ -41,7 +41,7 @@ Various  relational databases, manged by aws.
 ### Option
 
 #### RDS Custom for Oracle
-- alllows customisation to host and os
+- allows customization to host and os
 
 ## Maintenance
 - maintenence causes downtime even if the db is multi AZ
@@ -49,13 +49,14 @@ Various  relational databases, manged by aws.
 ## Backups
 - daily full backup during maintence window
 - transactions logs are backed up by rds every 5 mins
-- restory any point in time (5 mins aago)
+- restory any point in time (5 mins ago)
 - 1 to 35 days of retention
 - if multi az backups span multi region
 
 ### Manual Snapshot
 - manual trigger
-- retention aas log as you want
+- retention as log as you want
+- pay for the space occupied
 
 ### Savings
 - take snapshot and delete database
@@ -69,7 +70,7 @@ Various  relational databases, manged by aws.
 - if master is not encrypted, read replicas can not be encrypted
 - to change from and to encypt use snapshot
 - encrypt in flight with tls root certificates client side
-- can use [[IAM]] roles to connect to database instead of username and pw
+- can use [[IAM]] roles to connect to database instead of username and pw on mySQL-compatible DBs
 - can use [[SecurityGroup]]
 - audit logs can be enabled and be send to [[CloudWatch]]
 

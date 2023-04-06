@@ -20,7 +20,7 @@ to manage and configure a multi account setup.
 
 ### Detective Guardrail
 - uses [[AWSConfig]]
-- e.g. identify untagged ressources
+- e.g. identify untagged resources
 
 ## Further Integration
 - [[SNS]]

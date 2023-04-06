@@ -2,7 +2,7 @@
 # AWS Shield
 
 ## TLDR
-Protect your ressources from DDOS Attacks.
+Protect your resources from DDOS Attacks.
 
 ## Features
 - is enabled by default with no additional cost

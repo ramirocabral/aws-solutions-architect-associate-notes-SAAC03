@@ -3,4 +3,4 @@
 - highly reliaable
 - SMB protocol
 - AD Integration
--
+- supports SMB (Windows)

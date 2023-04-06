@@ -2,7 +2,7 @@
  - creates Data Lakes
  - anayltics puprops
  - fully managed
- - discoer cleanse and transform data into the data lake
+ - discover cleanse and transform data into the data lake
  - automates many complex manual steps (using ML transforms)
  - build with AWS [[Glue]]
  - stored in [[S3]]
@@ -11,7 +11,7 @@
  - [[s3]]
  - [[rds]]
  - Relational DB
-  Fine grained acess control
+ - Fine grained acess control
 
 ## Usage
 - centralized permissions for analystics at column level

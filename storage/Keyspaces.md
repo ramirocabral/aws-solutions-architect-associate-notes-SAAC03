@@ -1,7 +1,7 @@
 # Keyspaces
 - managed 
 - serverless
-- apache cassandra
+- Apache cassandra
 - multi az replication
 - tables scales automatily
 - single digit ms latency

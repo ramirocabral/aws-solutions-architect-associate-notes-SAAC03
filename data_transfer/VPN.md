@@ -2,7 +2,7 @@
 # VPN
 
 ## TLDR
-Access AWS Ressources in one or more [[VPC]]s as if they were in your on premise network.
+Access AWS Resources in one or more [[VPC]]s as if they were in your on premise network.
 
 ## Design
 - Use non-overlapping ip ranges for each network
@@ -119,7 +119,7 @@ Access AWS Ressources in one or more [[VPC]]s as if they were in your on premise
 - encryted link where data can pass from the customer network to, or from aws
 
 ### Customer Gatway
-- An AWS Ressource that provides Information to AWS about your Customer Gateway device
+- An AWS Resource that provides Information to AWS about your Customer Gateway device
 
 ### Customer Gateway Device
 - Physical or Software

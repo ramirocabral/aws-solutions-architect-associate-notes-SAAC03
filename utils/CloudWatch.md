@@ -74,7 +74,7 @@ Central service for all logs and metrics in AWS.
 #### Application Insights
 - automated dashboard with monitored applications
 - suport only select techstack on ec2 (java, iis, databases)
-- can use additional ressources ([[RDS]], [[S3]], [[SNS]] ...)
+- can use additional resources ([[RDS]], [[S3]], [[SNS]] ...)
 - Powered by Sage maker
 - reduce time to troubleshoot
 - alters and findigs are sent to [[EventBride]] and [[SSM]] OpsCenter

@@ -1,8 +1,8 @@
 # Athena
 - serverless
 - uses SQL Language
-- interactive query serive to analyse data in s3
-- per only per queries run
+- interactive query serve to analyse data in s3
+- pay only per queries run
 - process logs
 - ad hoc analysis
 - expensive if data is not columnar
@@ -10,7 +10,7 @@
 
 ## Use
 - commonly used with quicksight
-- buisness intel, alaytics, reporting
+- business intel, anaytics, reporting
 - use glue to covert data to parquet or orc
 - partition data by path
 ```

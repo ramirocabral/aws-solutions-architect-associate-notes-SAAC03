@@ -24,7 +24,7 @@ AWS IAM is a global service. Its used in nearly all other services to control pe
 - One group can have multiple users
 ## Roles
 - intended to be used by AWS Services
-- can be used to access cross account ressources
+- can be used to access cross account resources
 
 ## Permission Boundary
 - maximum permission employees can grant to other entities
@@ -46,11 +46,11 @@ AWS IAM is a global service. Its used in nearly all other services to control pe
         {
             "Sid": "", // statement id optional
             "Effect" : "", // Allow | Deny
-            "Principal" : "", // which account/user/role this should be applied to (only if used to attach to a ressource)
+            "Principal" : "", // which account/user/role this should be applied to (only if used to attach to a resource)
             "Action": [ // list of actions to deny or allow 
                 "s3:putObject"
             ],
-            "Ressource":["mybucket/*"], // list of ressource for which the actions are applied to
+            "Resource":["mybucket/*"], // list of resource for which the actions are applied to
             "Condition": []//list of conditions for when this policy is applied, optional
         }
     ]
@@ -66,7 +66,7 @@ AWS IAM is a global service. Its used in nearly all other services to control pe
 - force mfa
 - account org
 ### Trust Policy
-- Defines/Limits which ressource an asume the IAM role
+- Defines/Limits which resource an asume the IAM role
 
 ## Password Policy
 
@@ -103,16 +103,16 @@ AWS IAM is a global service. Its used in nearly all other services to control pe
 - Report of all  Accounts Users and credential status (pw, accesskeys, mfa etc)
 
 ### IAM Access Advisor
-- target a single user or ressource and get the info of all service permissions and when that service was lastly accessed
+- target a single user or resource and get the info of all service permissions and when that service was lastly accessed
 - can be used to revise policies and roles
 
 ## Roles vs Resource Based Policies
 - when you assume a role, you give up all previous persmissions
-- Ressource based if a Iam entity needs to do multiple things on diffrent accounts
+- Resource based if a Iam entity needs to do multiple things on diffrent accounts
 
 ### [[EventBride]]
 - when [[EventBride]] runs any task it needs access for the target service
-- some service support iam some use ressource based policies
+- some service support iam some use resource based policies
 
 ### Cross Account
 - attach policy to a resouce ([[S3]])

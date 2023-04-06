@@ -2,7 +2,7 @@
 ![[Pasted image 20221030110235.png]]
 
 ## TLDR
-The AWS CLI can be used to create, change or delete ressources and services in AWS Via Command Line. Its often for automation purposes.
+The AWS CLI can be used to create, change or delete resources and services in AWS Via Command Line. Its often for automation purposes.
 
 ## Access Keys
 - Authentification for CLI Commands 
