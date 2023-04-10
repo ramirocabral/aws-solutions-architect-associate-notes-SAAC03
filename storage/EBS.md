@@ -25,7 +25,7 @@ This is network storage attached to an [[EC2]] instance.
 - cheaper Snapshot storage but longer restore time
 
 ### EBS Recycle Bin
-- can enable recycle for recovery (retention 1 day - 1 year)
+- can enable recycle for recovery (retention 1 day - 1 year). Can be used for IAM images and EBS Snapshots
 
 ### Fast Snapshot Restore (FSR)
 - cost a lot

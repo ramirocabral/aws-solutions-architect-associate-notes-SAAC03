@@ -85,3 +85,8 @@ AWS Created custom DB tech, very high performan. Useful for global and serverles
 - faster than snapshot & restore
 - cost effective
 - usful to create staging
+
+## Lambda
+
+### Store Procedure
+- Can trigger a AWS Lambda function from a SP

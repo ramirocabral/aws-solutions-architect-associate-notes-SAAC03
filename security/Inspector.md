@@ -7,7 +7,7 @@
 - generates Risk Score
 
 ## [[EC2]]
-- useses AWS System MAnager agent
+- useses AWS System Manager Agent
 - anaysle against network access
 - analyse running os against known vulns
 

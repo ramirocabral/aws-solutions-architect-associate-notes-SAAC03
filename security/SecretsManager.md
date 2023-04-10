@@ -3,6 +3,9 @@
 - integration with rds
 - secrets can be encrypted using kms
 
+## Rotate Keys
+- To rotate keys, you can use a custom Lambda function
+
 ## Multi Region Secrets
 - replicate secret accros regions
 - creartes replica secrets

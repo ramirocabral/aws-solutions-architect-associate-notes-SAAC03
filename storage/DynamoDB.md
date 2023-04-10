@@ -20,6 +20,7 @@ NoSQL Serverless DB. Tons of features and can be global.
 ##  Capacity Modes
 - provisoned capacity with optional autoscaling
 - on demand capacity
+- can change modes with no downtime
 
 ## Use cases
 - can replace elasticache (storing session data with ttl feature)
