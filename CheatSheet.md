@@ -776,7 +776,7 @@ _*SERVICES FOR ARCHITECTURE*_
   * Highly scalable / high performance, lets you run applications on an
     EC2 cluster 
   * ECS Launch Types
-     1. *Fargate Launch Type* is serverless, managed by AWS
+     1. *Fargate Launch Type* is serverless, managed by AWS. Comes with 20 GiB of free ephemeral storage
      2. *EC2 Launch Type* gives you direct access to the instances, but
         you have to manage them
   * ECS uses the  _ECS Service Auto Scaling_ (aka Application Auto
@@ -827,6 +827,10 @@ _*SERVICES FOR ARCHITECTURE*_
     policies.
   * You can migrate an account to another AWS organization, e.g.  if you
     divest a business unit
+  * _AWS Control Tower_ provides a single location to easily set up your new well-architected multi-account environment and govern 
+    your AWS workloads with rules for security, operations, and internal compliance. 
+  * _AWS Resource Access Manager (RAM)_ service  helps you to securely share your resources across AWS accounts or within your 
+    organization or organizational units (OUs) in AWS Organizations
 
 
 *AWS CloudTrail*
