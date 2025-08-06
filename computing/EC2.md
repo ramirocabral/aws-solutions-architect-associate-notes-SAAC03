@@ -205,4 +205,8 @@ Each instances has a primary ENI (can't detach it), but you can create more ENIs
 
 - By default your account has a maximum limit for ec2 instances based on the total vcpu used, you can submit a request to increase that limit
 
+--- 
+
+**REMINDER: ON EC2 instances, the Root device can be [[EBS]]-based or [[InstanceStore]]-based.**
+
 **For EC2 Storage options see the "storage" section**.
