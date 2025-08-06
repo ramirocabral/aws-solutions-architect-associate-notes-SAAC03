@@ -1,0 +1,9 @@
+{
+  "readableLineLength": true,
+  "showInlineTitle": true,
+  "vimMode": true,
+  "foldIndent": true,
+  "foldHeading": true,
+  "tabSize": 5,
+  "showIndentGuide": true
+}
