@@ -2,6 +2,7 @@
 # Elastic Compute Cloud
 
 ## TLDR
+
 EC2 is a the combination of a virtual machines and hardware capacity attached to that vm in AWS. It is one of the oldest services and well integrated into most other services.
 
 ## Virtual Machines (EC2)
@@ -167,38 +168,41 @@ By default, EC2 instances come with:
 - You own it as long as you don't release it.
 - You can mask a fail by keeping the IP but changing the instance.
 - Up to 5 per account, can request more than 5 from AWS.
+- AVOID IT.
 
+## ENI (Elastic Network Interface)
 
-## ENI Elastic Network Interfaces
-- Virtual Network Card
-- Can be used not only for ec2
-- Eth0 = primary ENI
-- Primary private ip
-- Can add multiple for multiple private ips
-- Can attach elastic ip
-- Can attach mac adress
-- Can attach and detach from instance
-- Bound by AZ
-### EFA Elastic Fabric Adapter
-- use to accelerate high performance computing by providing os bypacc hardware interface
-- cannot be used for windows 
+Logical component in a [[VPC]], represents a Virtual Network Card.
 
-### ENA Elastic Network Adapter
-- use for high performance networking capabilitiies
-- slower than efa
+- Private private IPV4, one or more secondary IPv4.
+- One Elastic IPv4 per private IPv4.
+- One Public IPV4.
+- One or more security groups.
+- A MAC address.
+- Bound to an AZ.
+- Can create ENI independently and attach them on the fly.
+
+Each instances has a primary ENI (can't detach it), but you can create more ENIs and attach them.
 
 ## EC2 Hibernate
-- Standby for EC2, ram is saved
-- Faster startup
-- Root [[EBS]] must be encrypted
-- Used for breaks in very long running tasks or if an instances takes very long to startup
-- Can last no longer than 60 days
-- Must be enabled before launch
+
+![[instance_lifecycle.png]]
+
+- Standby for EC2, RAM is saved.
+- Faster startup.
+- Under the hood -> RAM state saved in the root EBS volume. (IT MUST BE ENCRYPTED).
+- Used for breaks in long running tasks or if an instances takes very long to startup.
+- Can last no longer than 60 days.
+- Must be enabled before launch.
 
 ## EC2 Instance Recover
-- Creates a new EC2 instance which is identical to the previous ec2
-- recovers private and public ip, metadat, elastic ip, instandce id
-- data in memory is lost
+
+- Creates a new instance which is identical to the previous instance.
+- Recovers private and public ip, metadat, elastic ip, instandce id
+- Data in memory is lost.
 
 ## Limits
-- by default your account has a maximum limit for ec2 instances based on the total vcpu used, you can submit a request to increase that limit
+
+- By default your account has a maximum limit for ec2 instances based on the total vcpu used, you can submit a request to increase that limit
+
+**For EC2 Storage options see the "storage" section**.

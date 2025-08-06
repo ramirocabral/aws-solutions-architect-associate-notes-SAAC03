@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "9075859ea90512b7",
@@ -169,7 +168,14 @@
   "active": "de83062d81c0af68",
   "lastOpenFiles": [
     "computing/EC2.md~",
+    "attachments/instance_lifecycle.png",
+    "computing/4913",
+    "networks/ENI.md",
+    "networks/ENI.md~",
+    "networks/VPC.md",
     "computing/EC2.md",
+    "attachments/placement_group_spread.png",
+    "attachments/placement_group_partition.png",
     "attachments/spot_instance_request.png",
     "attachments/2025-08-06_02:08:17.png",
     "attachments/2025-07-25_17:20:34.png",
