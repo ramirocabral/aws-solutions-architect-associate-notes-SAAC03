@@ -2,180 +2,172 @@
 # Elastic Compute Cloud
 
 ## TLDR
-EC2 is a the combination of a virtual mashines and hardware capacity attached to that vm in AWS. It is one of the oldest services and well integrated into most other services.
+EC2 is a the combination of a virtual machines and hardware capacity attached to that vm in AWS. It is one of the oldest services and well integrated into most other services.
 
 ## Virtual Machines (EC2)
 
 ### Configuration Options
-- OS (Win, Linux, MacOs)
-- CPU
-- RAM
-- Network attached storage ([[EBS]] & [[EFS]])
-- Hardware attached ([[InstanceStore]])
-- Network Card (Speed, Ip)
-- Firewall ([[SecurityGroup]])
-- Bootstrap script (User Data)
+
+- OS (Win, Linux, MacOs).
+- CPU.
+- RAM.
+- Network attached storage ([[EBS]] & [[EFS]]).
+- Hardware attached ([[InstanceStore]]).
+- Network Card (Speed, Ip).
+- Firewall ([[SecurityGroup]]).
+- Bootstrap script (User Data).
 
 ### User Data
-- Is a script that runs once on the first start of the instance
-- Script is run using root privileges
 
-### Use Cases
-- Installing updates
-- Installing software
-- Download files from the internet
+- Script that runs once on the first start of the instance.
+- Runs using root privileges.
 
 ### Instance Types
 
-#### Type Definition
-- Split by family
-- In family types are defined by Class.Generation.Size 
+![[instance_type_nomenclature.png]]
 
-#### Families
+#### Classes
 
-##### General Purpose
-- Balance between, computing, memory and network speed
+Some of the available classes are:
 
-##### Compute Optimized
-- High cpu power
-
-###### Use Cases
-- Ml
-- Media Transcoding 
--  ...
-
-##### Memory Optimized
-- High amount of RAM/Memory
-
-###### Use Cases
-- Process large data sets in memory
-- Non relational databases
-- Cache stores
-- In memory databases 
-- Real time proccessing of big unstructured data
-
-##### Storage Optimized
-- High amount of Disk IOPs
-
-###### Use Cases
-- A lot of Datasets in local storage
-- High frequency online transaction processing systems
-- Databases
-- Cache for in mem databases (e.g. redis)
-- Distributed file systems
-- Data warehouse applications
+- **General Purpose**: Balance between, computing, memory and network speed.
+- **Compute Optimized** : Compute-intensive tasks. E.g. high performance web servers, scientific modeling, dedicated gaming servers.
+- **Memory optimized** : Workloads that process large data sets in memory. E.g. databases, cache, realt-time big data processing.
+- **Storage Optimized** : High amount of Disk IOPs. E.g. Databases, distributed FS, data warehousing.
 
 ## Purcharsing Options
 
 ### On Demand
-- Price by second
-- Use for short workload
 
-### Reserved
+- Pay for what you use.
+- Price by second (min 60s).
+- Short term and un-interrupted workloads.
 
-#### Default
+### Reserved Instances
+
 - 1 Year OR 3 Years 
-- Cheaper than on demand
-- Need to specify type os, region, tenacy
-- Cheaper if payed upfront
-- Scope reserve in zone and AZ
-- You can sell peer to peer in marketplace
+- Payment options: All upfront, Partial upfront, No upfront.
+- Reserve specific instante attributes (type, region, tenancy, os).
+- Scope reserve in zone and AZ.
+- You can sell peer to peer in the **Reserved Instance Marketplace**. (NOT THE AMI/SAAS MARKETPLACE).
 
-#### Convertible
+**Convertible Reserved Instance:**
 - More expensive than default
-- Can change instance type, os, region, tenacy
+- Can change instance type, os, region, tenancy.
 
 ### [[SavingsPlans]]
-- 1 Year OR 3 Years
+
+- Commit to a certain type of usage.
+- 1 Year OR 3 Years.
 - Up to same discount as default reserved instance
-- Commit to an amount of usage (cpu, mem, disk)
-- Beyond commit is billed on demand price
-- Locked to instance family and region
-- Can change os, tenancy, and instance size
+- Beyond commit is billed on demand price.
+- Locked to instance FAMILY and REGION.
+- Can change OS, tenancy, and instance size.
+- Usage beyond the commit is billed On-Demand price.
 
 ### Spot Instances
-- Cheapest
-- Can lose instance
-- Define max price you are willing to pay, if you are overbid your instance is gone
 
-#### Use Cases
-- Short workloads
-- Suited for resiliant jobs
-- Distributed workloads (these are resiliant by definition)
-- Batch jobs
+- Cheapest.
+- Can lose instance.
+- Most Cost-Efficient type of instances.
+- Define max price you are willing to pay, if you are overbid your instance is gone.
+- Useful for workloads resilient to failure.
 
 ### Dedicated Hosts
-- Rent an entire physical server, control placement of that server
-- can use on demand or reserved 
-- most expensive 
-- can convert to dedicated instance
 
-#### Use Cases
-- Complicance
-- Server bound software licences
+- Most expensive.
+- Rent a physical server, control placement of that server.
+- On demand or Reserved.
+- For companies for strong regulatory or compliance requirements.
+- Can convert to a dedicated instance.
 
 ### Dedicated Instances
-- No other customer will share the hardware used by you
-- Hardware may be shared within same account
-- No control over instance placement (hardware might be moved)
-- can convert to dedicated host
+
+- No other customer will share the hardware used by you.
+- Hardware may be shared with other instances in the same account.
+- No control over instance placement (hardware might be moved).
+- Can convert to dedicated host.
 
 ### Capacity Reservations
-- Reserve a capacity in a AZ for duration (on demand instance)
-- No time commitment
-- No billig discount
-- Combine with Saving plan and Reserved Instances for same AZ to save money
-- Charged on demand price if instance is not running
 
-  #### Use Cases
-- short term uninterrupted workload in a specific az
+- Reserve a capacity in a AZ for duration (on demand instance).
+- No time commitment.
+- No billig discount.
+- Combine with Saving plan and Reserved Instances for same AZ to save money.
+- Charged on demand price if instance is not running.
+- For short term uninterrupted workload in a specific AZ.
 
-## Spot Instance
-- Request for an instance and the instance running itself is diffrent
-- If you terminate your instance but not the request the instance will be relaunched
-- If you cancel your request your instance will still be running
-![[Pasted image 20221101164159.png]]
-### Spot Blocks
-- Duration window of your Spot instance 
-- 1 to 6 hours
-- designed to not be interrupted
+## Spot Instance Requests
 
-### Fleet
-- Define multiple options for instance type , region etc
-- Define a budget and target capacity
+- Define a **Max Spot Price** we are willing to pay.
+- We have the instance while **current spot price < max spot price**, then AWS will **interrupt** it, and we have a 2 min grace period to **stop** or **terminate** the instance.
+- If you terminate your instance but not the request the instance will be relaunched.
+- If you cancel your request your instance will still be running.
 
-#### Strategies
-- Lowest price, launch from lowest price pool
-- Diversified, launch from all pools (resiliance)
-- Capacity optimized, launch from pool with strongest capacity settings
+![[spot_instance_request.png]]
 
-## Elastic Ip
-- A static ip which can be attached to Elastic Network Interfaces and other services
-- Used to mask a fail by keeping ip but changing machine
-- Up to 5 per account
-- Can request more than 5 from aws
+### Spot Fleets
+
+- Set of Spot instances + (optionally) On-Demand instances.
+- It will try to meet the target capacity, with price constraints.
+- Define possible **Launch Pools** (Instance Type, AZ, OS).
+- Define a budget and target capacity.
+- The Fleet stops launching instances when reaching capacity or max cost.
+
+The **strategies** to allocate them are:
+
+- **Lowest price**: launch the lowest price pool. (cost optimization).
+- **Diversified**: distributed across all pools. (availability).
+- **Capacity optimized**: pool with the optimal capacity for the number of instances.
+- **Price Capacity Optimized**: pools with highest capacity available, the select the pool with lowest price. (RECOMMENDED)
 
 ## Placement Groups
-Placement strategy for a group ec2 instances
 
-### Spread
-- Multi AZ 
-- Different hardware
-- Limited to 7 instances per AZ per placement group
-- Use for critical apps and high availability
+Placement strategy for a group of EC2 instances.
 
 ### Cluster
-- Same rack
-- Fast internal connection from ec2 to ec2 
-- Used for low latency and big data jobs with deadline
-- Rack fail -> all EC2s fail
+
+- **Low-latency group in a single AZ.**
+- AZ fails -> all instances fail.
+- Great network performance.
+- Low latency and big data jobs with deadline.
+
+### Spread
+
+- Spread instances across hardware.
+- Multi AZ.
+- Different hardware.
+- Limited to 7 instances per AZ per placement group.
+- Reduced risk of simultaneous failure.
+- Used for critical apps and High Availability.
+
+![[placement_group_spread.png]]
 
 ### Partition
-- Multi AZ
-- Multi rack but same rack per partition
 
-#### Use Case
--  big data application which are partition aware
+- Spreads instances across multiple partitions (each in a single AZ).
+- Multi AZ.
+- Instances in a partition do not share racks with the instances in the other partitions.
+- Up to 100s of instances.
+- 7 partitions per AZ.
+- Instances can access the partition metadata.
+
+![[placement_group_partition.png]]
+
+## Networking in EC2
+
+By default, EC2 instances come with:
+
+- 1 Private IP.
+- 1 Public IP. ($0.005 per hour).
+
+### Elastic Ip
+
+- A static IP which can be attached to Elastic Network Interfaces and other services.
+- You own it as long as you don't release it.
+- You can mask a fail by keeping the IP but changing the instance.
+- Up to 5 per account, can request more than 5 from AWS.
+
 
 ## ENI Elastic Network Interfaces
 - Virtual Network Card
