@@ -1,75 +1,56 @@
 ![[Pasted image 20221101113842.png]]
 # Auto Scaling Group
 
-## TLDR
-A Group of [[EC2]] Instances scaled horizontally, can use an [[ELB]] or work without it if there is no incomming traffic. Can use [[ELB]] or [[EC2]] health checks. Can also be used for [[ECS]] in which case it uses a ecs service as target.
-
-## Features
-- scale horizontaly
-- scale out and in
-- ensure maximum and minimum ec2s
-- automaticly register EC2 with load balancer
-- if instance is unhealthy it will be terminated and recreated
-- set desired capacity
+- Scale OUT/IN EC2 instances.
+- We can have a min and a max number of instances running.
+- Automatically register instances with a [[ELB]].
+- Recreate an instance if it is unhealthy (health checks can also be made with an ELB).
+- They are FREE, you pay only for the underlying instances.
+- You specify a launch template, min, desired and max capacity and Scaling Policies.
 
 ## Launch template
-- similar to launch config
-- specifies same stuff
-- allows for multiple versions of a template
-- can mix on demand and spot instances
 
-## Launch configuration
-- defines instace configuration (size etc)
-- AMI
-- instance Type
-- key pair
-- [[SecurityGroup]]
-- block device mapping
-- can not be modified but must be swaped if already in use
+Similar to launch config (deprecated).
 
-### [[EC2]] Tencacy
-- dedicated before other configs
-- Take [[VPC]] tenacy config into account
+Specifies:
 
-## Instance States
+- AMI + instance type.
+- EC2 user data.
+- EBS volumes.
+- Security groups.
+- Key pairs.
+- IAM roles.
+- Network + subnet information.
+- Load Balancer information.
 
-### Standby
-- used for maintance
-- wont be terminated if health check fails
-- wont recieve traffic
+## Auto Scaling
 
-## Termination Order
-1. Cost (Spot vs on-demand)
-2. oldest launch configuration
-3. oldest launch template
-4. closest to next billig hour
+It is possible to scale based on [[CloudWatch]] alarms. The alarms monitor metrics and they can trigger scaling.
 
 ## Scaling Policies
 
-### Simple
-- scale by threshhold values
-- must wait for scaling and health check to complete to scale again
-- must wait for cooldown period expide to scale again
+### Dynamic Scaling
 
-### Step
-- scale by multiple threshold values to diffrent configs
+- **Target Tracking Scaling**: Scale to match a target metric (e.g. 50% CPU).
+- **Simple/Step Scaling**: React based on CloudWatch alarms.
 
-### Scheduled
-- scale on predefined time window
+### Scheduled Scaling
 
-### Target Tracking
-- scale to match the defined metric (e.g. 50% cpu)
-- must not wait for cooldown period
+- Scale on predefined time window.
+- Anticipate load changes.
 
-## Scaling Actions
+### Predictive Scaling
 
-### Rebalancing
-Happens when an instance is missing or AZ is changed or Spot schenanigans.
-1. Launch new instances
-2. Terminate old instances
+Continuously forecast load and schedule scaling ahead.
 
-### Scaling
-Happens for health checks
-1. Terminate
-2. Launch new
+## Good metrics to scale on
 
+- CPUUtilization: average CPU usage across instances.
+- RequestCountPerTarget: to make sure the number of requests per instance is stable.
+- Average Network In/Out: to make sure the network is not saturated. Network-bound apps.
+- Any custom metric (using [[CloudWatch]]).
+
+## Scaling Cooldown
+
+- After a scaling activity -> Cooldown Period (default 300s).
+- The ASG won't launch or terminate instances during this period. (metric stabilization).

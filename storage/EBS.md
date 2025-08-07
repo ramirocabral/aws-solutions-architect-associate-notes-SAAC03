@@ -13,7 +13,7 @@
 - Snapshot needed to change AZ.
 - Provisioned capacity (Size and IOPS).
 - You get billed even if drive is not full.
-- **Delete on termination** --> volume deleted when instance is terminated.(default ON).
+- **Delete on termination** --> volume deleted when instance is terminated.(default on ROOT).
 - Can be modified while in use (IOPS and capacity).
 
 ## EBS Snapshots
