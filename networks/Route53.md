@@ -12,7 +12,6 @@ AWS Nameserver and Domain Name register Service.
 - 100% availabilty
 - health checks
 
-
 ## DNS Record
 - domanin name
 - record Type
