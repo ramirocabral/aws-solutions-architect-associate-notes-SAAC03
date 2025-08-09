@@ -17,7 +17,7 @@ NoSQL Serverless DB. Tons of features and can be global.
 - in memory caching
 - transaction capabilty
 
-##  Capacity Modes
+## Capacity Modes
 - provisoned capacity with optional autoscaling
 - on demand capacity
 - can change modes with no downtime
