@@ -1,10 +1,24 @@
 ![[Pasted image 20221030232727.png]]
-# Elastic Beanstalk
 
 ## TLDR
-A quick way of hosting application without having to manage infrastructre. But you can modify your infrastructure post launch. It offers more control than [[AppRunner]]. 
 
-Features
-- supports docker
-- app logs are saved to [[S3]]
-- server logs can be enabled and saved to [[s3]] or [[CloudWatch]]
+Developer centric view of deploying an application. uses EC2, ASG, ELB, RDS, etc.
+
+## Features
+
+- Automatically handles provisioning, load balancing, scaling, application health monitoring, etc. (PaaS)
+- Only the application code is the respoinsibility of the developer.
+- Fee, only pay for the underlying resources.
+- Supports Docker.
+- Single instance -> dev.
+- High availability -> prod.
+
+## Components
+
+- **Application**: collection of Beanstalk components. (environments, versions, configurations...).
+- **Application version**: an iteration of your application code.
+- **Environment**:
+  - Collection of AWS resources running an application version.
+  - **Tiers:** Web Server Environment Tier & Worker Environment Tier (uses SQS queue, scale based on the \#messages).
+
+<img src="attachments/beanstalk_iteration.png" width="600">

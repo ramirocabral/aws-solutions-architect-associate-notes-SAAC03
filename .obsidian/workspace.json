@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "networks/Route53.md",
+                "file": "computing/ElasticBeanstalk.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Route53"
+              "title": "ElasticBeanstalk"
             }
           }
         ]
@@ -167,9 +167,12 @@
   },
   "active": "de83062d81c0af68",
   "lastOpenFiles": [
+    "computing/AMI.md~",
+    "computing/ElasticBeanstalk.md~",
+    "attachments/beanstalk_iteration.png",
+    "networks/Route53.md",
     "networks/Route53.md~",
     "networks/NAT.md",
-    "networks/Route53.md",
     "attachments/route53_outbound_endpoints.png",
     "attachments/route53_inbound_endponts.png",
     "attachments/route53_inbound_endpionts.png",
@@ -188,7 +191,6 @@
     "databases/RDS.md",
     "attachments/aurora_cluster.png",
     "attachments/aurora_design.png",
-    "attachments/rds_multi_az.png",
     "scalabily/ELB.md",
     "databases",
     "scalabily/ASG.md",
@@ -200,7 +202,6 @@
     "storage/EFS.md~",
     "storage/EBS.md",
     "computing/AMI.md",
-    "storage/InstanceStore.md~",
     "computing/EC2.md",
     "networks/ENI.md",
     "networks/VPC.md",

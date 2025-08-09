@@ -78,4 +78,3 @@
 - **Security Groups**: Control access to the DB.
 - **No SSH available**. (except for RDS Custom).
 - **Audit Logs can be enabled**. Send to Cloudewatch for longer retention.
- 

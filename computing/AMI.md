@@ -18,3 +18,7 @@ AMIs are **preconfigured** [[EC2]] Instance templates. AMIs allow further custom
 - Stop [[EC2]] instance.
 - Build AMI (also creates an [[EBS]] Snapshot, if you delete this snapshot the AMI wont work).
 - Launch new instances with your freshly created AMI.
+
+---
+
+**Golden AMI**: pre-configured AMI used as a reference for creating other AMIs. Quickly and consistently create new instances configured with the same software and settings.
