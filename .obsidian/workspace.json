@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computing/ElasticBeanstalk.md",
+                "file": "storage/S3.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ElasticBeanstalk"
+              "title": "S3"
             }
           }
         ]
@@ -167,6 +167,8 @@
   },
   "active": "de83062d81c0af68",
   "lastOpenFiles": [
+    "storage/S3.md~",
+    "computing/ElasticBeanstalk.md",
     "computing/AMI.md~",
     "computing/ElasticBeanstalk.md~",
     "attachments/beanstalk_iteration.png",
@@ -198,8 +200,6 @@
     "scalabily/ELB.md~",
     "utils/ACM.md",
     "storage/EFS.md",
-    "storage/EBS.md~",
-    "storage/EFS.md~",
     "storage/EBS.md",
     "computing/AMI.md",
     "computing/EC2.md",
