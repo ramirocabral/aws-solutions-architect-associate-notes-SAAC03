@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9075859ea90512b7",
@@ -168,6 +169,7 @@
   "active": "de83062d81c0af68",
   "lastOpenFiles": [
     "storage/S3.md~",
+    "attachments/s3_object_lambdas.png",
     "computing/ElasticBeanstalk.md",
     "computing/AMI.md~",
     "computing/ElasticBeanstalk.md~",
@@ -192,7 +194,6 @@
     "databases/RDS.md~",
     "databases/RDS.md",
     "attachments/aurora_cluster.png",
-    "attachments/aurora_design.png",
     "scalabily/ELB.md",
     "databases",
     "scalabily/ASG.md",
