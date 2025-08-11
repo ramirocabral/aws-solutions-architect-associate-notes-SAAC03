@@ -37,6 +37,7 @@
 - Compatible with NFS, SMB, iSCSI.
 - Move workloads on ONTAP or NAS to AWS.
 - Storage automatically shrinks or grows.
+- High OS compatibility.
 - Snapshots, replication, low-cost, compression and data de-duplication.
 - Point-in-time instantaneous cloning.
 
@@ -53,7 +54,7 @@
   - Temporary storage
   - Data not replicated.
   - High burst.
-- **Persisten File System**
+- **Persistent File System**
   - Long-term.
   - Data replicated within same AZ.
   - Replaced failed files within minutes.
