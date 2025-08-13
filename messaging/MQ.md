@@ -1,5 +1,11 @@
 # Message Queue
-- rabbit mq or active mq 
-- use for migration if you dont wanna migrate app
-- multi az availabvle, needs efs for failover
-- topic and queue feature (emulate sqs and sns)
+
+- Managed service for RabbitMQ or ActiveMQ.
+- Used for migration if you dont want to migrate app.
+- Topic and queue feature (emulate [[SQS]] and [[SNS]]).
+- Multi-AZ.
+
+## High Availability
+
+- We have Multi-AZ with one Active and one Standby broker.
+- Needs EFS for storage.

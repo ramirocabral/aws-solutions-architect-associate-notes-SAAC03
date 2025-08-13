@@ -1,58 +1,73 @@
 ![[Pasted image 20221101163353.png]]
-# Amazon Simple Notification Service
 
 ## TLDR
 Message queue with a subscriber model. It can send the same message to alot of diffrent services at once. Scales good but not indefinetly. Pub/Sub.
 
 ## Features
-- subscriber async model
-- one producer multiple consumers/subscribers
-- up to 12 million subscribtions per topic
-- up to 100k topics
+
+- Subscriber async model.
+- One producer multiple consumers/subscribers.
+- Each subscriber to the topic will get all the messages.
+- Up to 12 million subscribtions per topic.
+- Up to 100k topics.
 
 ## Sources
-- [[CloudWatch]] alarms
-- [[ASG]] Notifications
-- AWS Budgets [[AWSBilling]]
-- [[Lambda]]
-- [[DynamoDB]]
-- Cloudformation
-- ...
+
+- [[CloudWatch]] alarms.
+- [[ASG]] Notifications.
+- AWS Budgets [[AWSBilling]].
+- [[Lambda]].
+- [[DynamoDB]].
+- Cloudformation.
+- ....
 
 ## Targets
-- [[Kinesis]] Data Firehouse
-- [[SQS]]
-- [[Lambda]]
-- HTTP
-- E-Mail
-- push
-- sms
 
-## Topic Publish
-- create a topic
-- add subscriptions to topic
-- publish to the topic
+- [[Kinesis]] Data Firehouse.
+- [[SQS]].
+- [[Lambda]].
+- HTTP.
+- E-Mail.
+- Push.
+- Sms.
 
-## Direct Publish
-- for mobile apps
-- create platform app
-- create platform endpoint
-- publish to endpoint
-- Google GCM
-- Apple APNS
-- Amazon ADM ...
+## Publish
+
+- **Topic Publish** (with SDK).
+  - Create a topic.
+  - Create one or more subscribers.
+  - Publish to the topic.
+- **Direct Publish** (mobile apps SDK)
+  - Create a platform app.
+  - Create a platform endpoint.
+  - Publish to the platform endpoints.
 
 ## Security
-- https by default
-- at rest using [[KMS]]
-- client side optional
-- iam for access control
-- sns access policies, resource based for cross account or other services
 
-## Fifo
-- same as [[SQS]] Fifo
+- HTTPS by default.
+- At rest using [[KMS]] keys.
+- Client side optional.
+- IAM for access control.
+- **SNS Access Policies**, resource based for cross account or other services.
 
-## Filtering
-- json policies on a subscriber 
-- will only recive msg which match the filter
-- can be used with fan out to split sns msgs to multiple deticated [[SQS]] queues
+## SNS + SQS: Fan Out
+
+- Push once in SNS, receive in all SQS queues that are subscribers.
+- Fully decoupled, no data loss.
+- SQS allows for: data persistence, delayes processing and retries of work.
+- Ability to add more queues over time.
+- SQS queue access polycy must allow SNS to write.
+
+![[fan_out.png]]
+
+## FIFO Topic
+
+- Ordering of messages in the Topic.
+- Same features as FIFO SQS queues.
+- Can have SQS Standard and FIFO queues as subscribers.
+- Limited throughput.
+
+## Message Filtering
+
+- JSON policy to filter messages sent to SNS subscribers.
+- If a subscription doesn't have a filter policy, it receives all messages.

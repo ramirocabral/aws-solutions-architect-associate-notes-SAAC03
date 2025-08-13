@@ -1,66 +1,81 @@
-![[Pasted image 20221101125233.png]]
-# Simple Queue Service
+![[sqs.png]]
 
 ## TLDR
+
 AWS standard queue service. Has ton of features like fifo and multi consumer. Scales indefinetly.
 
 ## Features
-- aws managed
-- async systems
-- decoupleing
-- message delay up to 15 min
-- unlimited throughput 
-- unlimited numer of messages
-- default retention 4 days, max 14 days
-- max size 256kbs
-- dynamicaly add concurrency/ read throughput
-- track ack/fail 
-- set visibilty timeout for ack/fail
-- scale transparently
-- buffer requests
-- can have duplicate messages
+- **Decouple applications**.
+- Unlimited throughput.
+- Default retention: 4 days, maximum of 14 days.
+- Low latency.
+- Message size <= 256 KB.
+- Can have duplicate messages. (at least once delivery)
+- Can have out of order messages. (best effort ordering)
 
-## Producers
-- needs to use sdk/api
+## Producing Messages
 
-## Consumers
-- [[EC2]] Instances, [[Lambda]] ..
-- polls queue, recieves up to 10 msg at a time
-- after processing use sdk/api to send delete msg command to [[SQS]]
+- Produced using the SDK. (SendMessage API)
+- Message is **persisted** until a consumer deletes it.
 
-## Types
-- cannot convert between types, ressouce needs to be recreated
+## Consuming Messages
 
-### Standard
-- max throughput
-- best efford ordering
-- at least once delivery
+- Running on EC2 instances, on-premise, Lambda, etc..
+- Poll for messages. (receive up to 10 messages at a time).
+- Process the messages.
+- Delete the messages using the DeleteMessage API.
 
-### Fifo
-- first in first out
-- needs to end with .fifo
-- delivered exactly once
-- max 3k per second with batching
-- max 300 per second withut batching
+## Common Patterns
+
+### SQS with ASG
+
+- CloudWatch Metric -> Queue Length.
+- We can set an alarm on the queue length to scale out/in the ASG.
+
+![[sqs_asg.png]]
+
+### SQS as a buffer to database writes
+
+![[sqs_buffer.png]]
 
 ## Security
-- https api 
-- at rest encryption with kms keys
-- client side encryption also possible
-- iAm to control access to queue
 
-### SQS Access policies
-- resource based permissions
-- cross account
-- other services without iam role
+### Encryption
 
-## Visibilty Timeout
-- after polled msg becomes invisible
-- set to process time to stop being processed twices
-- if process time takes longer can use SQS API to increase visibilty timeout for this message
+- In-flight encryption using HTTPS API.
+- At-rest encryption using KMS keys.
+- Client-side encryption available.
 
-## Long Poling
-- Queue gets polled for longer time to wait if queue is empty
-- decrease the number of api calls
-- between 1 and 20 seconds
-- can be configured at queue level or in api request
+### Access Control
+
+IAM policies to regulate access to the SQS API.
+
+### SQS Access Policies (similar to S3 bucket policies)
+
+Useful for cross-account access to SQS queues.
+
+## Message Visibiliity Timeout
+
+- After a message is polled by a consumer, it becomes **invisible** to other consumers.
+- By default, "message visibility timeout" = 30 seconds.
+- So, the message has 30 seconds to be processed.
+- After that time, the message becomes visible again.
+- If a consumer needs more time, it can extend the visibility timeout using the ChangeMessageVisibility API.
+- Visibility Timeout high -> if failure, re-processing will take time.
+- Visibility Timeout too low -> we may get duplicates.
+
+## Long Polling
+
+- After requesting a message, a consumer can "wait" for messages to arrive if the queue es empty.
+- Decreases API calls, increases the efficiency and reduces the latency
+- Between 1 and 20 sec.
+- WaitTimeSeconds API.
+
+## FIFO Queues.
+
+- Message ordering.
+- Limited throughput: 300 msg/s without batching, 3000 msg/s with batching.
+- Exactly-once send capability. (with Deduplication ID).
+
+
+
