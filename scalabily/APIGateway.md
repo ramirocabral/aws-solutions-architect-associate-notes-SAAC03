@@ -1,43 +1,50 @@
-# Api Gateway
-- fronted for api
-- can thrrottle request unsing token bucket algorithm
-- set a limit on steady-state rate and a burst of request
-- use lambda for no infrastructe
-- support websocket protocol
-- handle api versioning
-- swagger/open api support
-- transform and validate request
-- cache responses
+![[apigateway.png]]
 
-## API Gateway Keys
-- used to track a consumers usage accross your api
+## Overview
 
-## Targets
-- Lambda for REST
-- any HTTP endpoint
-- any AWS API ([[StepFunction]], [[SQS]], ...)
+- Lambda + API Gateway = No infra to manage.
+- Supports WebSockets.
+- Handle API versioning.
+- Handle different environments, security.
+- Create API keys, handle request throttling.
+- Swagger/OpenAPI to quickly define APIs.
+- Cache API responses.
+
+## Integrations
+
+- **[[Lambda]] Function**
+  - Invoke Lambdas.
+  - Expose REST APIs backed by Lambda.
+- **HTTP**
+  - Expose HTTP endpoints in the backend.
+  - Example: internal HTTP API on premise.
+- **AWS Service**
+  - Expose any AWS service as an API.
 
 ## Endpoint Types
 
-
-### Edge Optimized
-- routed through [[Cloudfront]]
-- used for global clients
+### Edge Optimized (default)
+- Routed through [[Cloudfront]] Edge Locations.
+- The API Gateway still lives in only one region.
+- For global clients.
 
 ### Regional
-- clients within the same region
-- manually combine with [[Cloudfront]] for more control
+- Clients within the same region.
+- Manually combine with [[Cloudfront]] for more control.
 
 ### Private
-- only from within your vpc
-- can use resource policy
+- Only from within your [[VPC]].
+- Can use Resource policy.
 
 ## Authentication
-- [[IAM]] Roles (for internal Application)
-- [[Cognito]] for External Users
-- Custom Authorized (using [[Lambda]] and own code)
 
-### Custom Domanin  name HTTP Secuirty
-- use [[utils/ACM]] 
-- [[utils/ACM]] cert must be in us east 1 for Edge Optimized
-- must use  [[Route53]]
+- [[IAM]] Roles (for internal Application).
+- [[Cognito]] for External Users.
+- Custom Authorized (using [[Lambda]] and own code).
+
+### Custom Domanin name HTTPS
+
+- Use [[ACM]].
+- If running Edge-Optimized endpoint, then the certificate must be in us-east-1.
+- If using Regional Endpoint, the certificate must be in the API Gateway Region.
+- Must setup CNAME or A-alias record in [[Route53]].

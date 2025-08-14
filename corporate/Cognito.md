@@ -1,27 +1,28 @@
 ![[Pasted image 20221031091542.png]]
-# Amazon Cognito
 
 ## TLDR
-Cognito is a Server which grants and manager access to your applications running in AWS. This is archived by granting an authenticated user temporary [[IAM]] credentials.
+Server which grants and manager access to an application running in AWS. This is archived by granting an authenticated user temporary [[IAM]] credentials.
 
-## Sub Services
+## Cognito User Pools
 
-## User Pools
-- Is a User directory
-- You can use AWS build in user management or use external (google, twitter facebook)
-- You can use the SDK to access directory profile
-- Easy sign up and sign in
-- Comes with a customizable web UI
-- Can use any SAML 2.0 identity providers
-- MFA support
-- Comes with a credentials check option (have ive been pwnd?)
-- Comes with account takeover protection
-- Phone or email verification
-- Can define custom workflows
-- Supports user migration
-- Can also run [[Lambda]] triggers
+- Sign in functionality for app users.
+- Serverless database of users for web and mobile apps.
+- Simple login, password reset, email verification, MFA, Oauth, etc.
+
+### Integrations
+
+CUP integrates with [[APIGateway]] and ALB.
+
+![[cognito_api_gateway.png]]
 
 ## Identity Pools
-- Maps an identify or a group to aws credentials
-- Provied aws credentials to grant access to aws resources
-- Use user pool to authenticate, then use identify pools for granular access rights
+
+- Get identities for "users" so they obtain temporary AWS credentials.
+- Users source can be Cognito User Pools, 3r party, etc.
+- Users can access the AWS services directly or through [[APIGateway]].
+- IAM Policies are defined in Cognito.
+- Default IAM roles for authenticated and guests users.
+
+### Row Level Security in DynamoDB
+
+- Users can only access their own data. (rows)

@@ -5,5 +5,6 @@
   "foldIndent": true,
   "foldHeading": true,
   "tabSize": 5,
-  "showIndentGuide": true
+  "showIndentGuide": true,
+  "promptDelete": false
 }

@@ -2,77 +2,118 @@
 # AWS Lambda
 
 ## TLDR
-AWS Lambda means you dont care about any infrastructure, you just upload a function to aws. You can than use that function from other services like  [[APIGateway]], [[SNS]] or even [[CLI]]. You upload Lambda code as a zip.
+
+With AWS Lambda you dont care about any infrastructure, you just upload a function to aws. You can than use that function from other services like  [[APIGateway]], [[SNS]] or even [[CLI]]. You upload Lambda code as a zip.
 
 ## Features
-- Run code serverless
-- Pay per compute time
-- Scaling is automated
-- No charge if not running
-- Operates from AWS owned[[VPC]]
-- By default only public traffic
-- You can enable function [[VPC]] access if you need private resources from your [[VPC]]
-- Scale up based on request amount
-- Can set custom function timeout
-- Can be packaged and deployed as container images
 
-## Drawbacks
-- Limited by time SHORT EXECUTIONS
-- if you need both private and public resources, you will have to enable [[VPC]] access and use a nat gateway to access the internet
+- Run code serverless.
+- Pay per compute time.
+- Scaling is automated.
+- No charge if not running.
+- Operates from AWS owned[[VPC]].
+- You can enable function [[VPC]] access if you need private resources from your [[VPC]].
+- Scale up based on request amount.
+- Increasing RAM will also improve CPU and network.
+- Can be packaged and deployed as container images.
 
-## Security
+## (some) Integrations
 
-### Lambda authorizer
-- Send additonal info based of bearer token or request context
-- Is useful because you can skip having to lookup users inside of your function (you pass the user data)
-- Dont pass credentials! (Though you could)
+- [[APIGateway]]
+- [[Kinesis]]
+- [[S3]]
+- [[CloudFront]]
+- [[DynamoDB]]
+- [[SNS]]
+- [[SQS]]
+- [[Cognito]]
+- [[EventBridge]]
 
-## Compute Power
-- Relative to memory allocation which can be manually set
+## Pricing
 
-## Lambda Layer
-- Zip archive which contains librarties, custom runtime and other dependecies
-- A single function can use up to 5 layers
-- Can use self created layers or already published ones
-- Unzipped size cannot exeed 250mb for a function and all layers which it depends on
+- Pay per calls: 
+  - $0.20 per 1 million requests. (first million free)
+- Pay per duration: 
+  - 400,000 GB-seconds of compute time per month free. (400,000 seconds if function is 1GB RAM)
+  - After, $1.00 for 600,000 GB-seconds.
 
-## Container Image
-- If using an image the image must implement the [[Lambda]] runtime api
-- [[ECS]] and Fargate are prefered for this use case
+## Limits (per region)
 
-## Price
-- Pay per call first 1 mill are free
-- 0.20 cent per one million request after
-- Pay per duration 400000GB-Seconds per month free (1)
-- Price scales up after that depending on gbseconds (more will be cheaper per gbsecond)
+- **Execution**:
+  - Memory allocation: 128MB to 10GB (1 MB increments).
+  - Maximum execution time: 15 minutes.
+  - Env variables (4 KB).
+  - Disk capacity (/tmp): 512MB to 10GB.
+  - Concurrent executions: 1000 (can be increased).
+- **Deployment**:
+  - Max zip size: 50MB.
+  - Size of uncompressed deployment: 250MB.
+  - Size of env variables: 4KB.
 
-(1): GBs = amount of ram multiplied by execution time
+## Concurrency and Throttling
 
-## Limits Per Region
+ - Can set a **"reserved concurrency"** at the function level.
+ - Limits the function to not scale beyond the limit.
+ - Each invocation over the limit will trigger a "Throttle".
+ - Throttle behavior:
+   - If **synchronous invocation** -> return ThrottleError-429.
+   - If **asynchronous invocation** -> retry automatically and then go to DLQ.(send to the event queue and attemps to run the function again for up to 6 hours).
 
-### Memory 
-- 128MB to 10GB in 1mb increments
+## Cold Starts and Provisioned Concurrency
 
-### Max Exec Time
-- 900 seconds/ 15 mins
+- **Cold Start**:
+  - New instance -> code is loaded and code outside the handler run (init.)
+  - If the init is large, this process can take some time.
+  - First request served by new instances had higher latency than the rest.
+- **Provisioned Concurrency**:
+  - Concurrency is allocated before the function is invoked. (in advance)
+  - Cold start never happens.
+  - Application Auto Scaling can manage concurrency.
 
-### ENV vars
-- 4kb for all vars together
+## SnapStart
 
-### Disk
-- 512MB to 10GB
+- Improves Lambdas performance up to 10x at no extra cost for Java, Python and .NET.
+- When enabled, function is invoked from a pre-initialized state.
+- When you publish a new version:
+  - Lambda initializes your function.
+  - Takes a snapshot of memory and disk state of the initialized function.
+  - The snapshot is cached.
 
-### Concurrency
-- 1000 but can be increased
+<img src="attachments/lambda_snapstart.png"  width="350" style="display: block; margin: auto;">
 
-### Deployment
+## Customization at The Edge
 
-#### Zip Size
-- 50 MB
+- **Edge Function**: Code attached to CloudFront distributions. Runs close to users to minimize latency.
+- CloudFront provides two types: **CloudFront Functions** and **Lambda@Edge**.
 
-#### Uncompressed With Dependencies
-- 250 MB
+<img src="attachments/cloudfront_functions.png"  width="200" style="display: block; margin: auto;">
 
-#### TMP
-- can use /tmp to load other files after/on startup
+### Use cases
 
+- Website Security and Privacy
+- Dynamic Web Application at the Edge.
+- SEO.
+- Intelligently Route Across Origins and Data Centers.
+- Bot Mitigation.
+- A/B testing.
+- ...
+
+### CloudFront Functions
+
+- Lightweight JavaScript functions.
+- For high-scale, latency-sensitive CDN customizations.
+- Change Viewer Requests and responses.
+
+### Lambda@Edge
+
+- NodeJS or Python functions.
+- Scales to **1000s of request/second**.
+- Change Viewer/Origin Requests and responses.
+- Author functions in one region (us-east-1), then CloudFront replicates to its locations.
+
+## Lambda on VPC
+
+By default, Lambda runs in an AWS-owned VPC. (cannot access resources in your VPC)
+
+- You must define VPC ID, the Subnets and SGs.
+- Lambda will create an ENI in your subnets.
