@@ -1,5 +1,4 @@
 ![[Pasted image 20221101124548.png]]
-# Amazon Relational Database Service (RDS)
 
 ## Supported Engines
 
@@ -78,3 +77,19 @@
 - **Security Groups**: Control access to the DB.
 - **No SSH available**. (except for RDS Custom).
 - **Audit Logs can be enabled**. Send to Cloudewatch for longer retention.
+
+
+## Invoking [[Lambda]] functions from RDS & Aurora
+
+- Invoke Lambdas from within your DB instance.
+- Allows you to process **data events** from within a database.
+- Supported **RDS for Postgres** and **Aurora MySQL**.
+- Must allow outbound traffic to the Lambda from within the DB.
+- DB instance must have the required permissions.
+
+## RDS Event Notifications
+
+- Notifications that tells information about the DB itself.
+- Don't have any info about the data itself.
+- Near real-time events.
+- Send to [[SNS]] or subscribe to events with [[EventBridge]].

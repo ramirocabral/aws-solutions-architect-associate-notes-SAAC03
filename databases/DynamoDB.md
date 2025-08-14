@@ -1,66 +1,94 @@
 ![[Pasted image 20221101212132.png]]
-# DynamoDB
 
 ## TLDR
 NoSQL Serverless DB. Tons of features and can be global.
 
 ## Features
-- NoSQL
-- serverless
-- milisec latency
-- key value doc db
-- single digit milisecond performance
-- multi az
-- fully manged
-- multi master
-- backup and restore
-- in memory caching
-- transaction capabilty
 
-## Capacity Modes
-- provisoned capacity with optional autoscaling
-- on demand capacity
-- can change modes with no downtime
+- Fully managed, highly available with replication across multiple AZs.
+- Scales to massive workloads.
+- Key-Value.
+- Milisec latency.
+- Auto-scaling capabilities.
+- Standard and Infrequent Access Table classes.
+- **TTL** -> automatically delete items after an expiry timestamp.
 
-## Use cases
-- can replace elasticache (storing session data with ttl feature)
- - serverless apps
- - rapidly evolve schemas
- - small documents 100bs
- - distributed serverless cache
+## Basics
 
-## DAX cluster
-- read cache 
-- in memory
-- microsecond read latency
+- Each table has a **primary key**.
+- Each table can have an infinite number of items (rows).
+- Each item has **attributes**.
+- Max item size 400KB.
+- Supported data types:
+  - Scalar Types.
+  - Document Types (list, map).
+  - Set Types.
+- You can **rapidly evolve schemas**.
 
-## Auth
-- [[IAM]]
+## R/W Capacity Modes
 
-## Dynamo DB Stream
-- event processing
-- invoke [[Lambda]] or send to [[Kinesis]]
-- 24 hour retention 
-- limited number of consumers
+- **Provisioned Mode** (default)
+  - Specify number of r/w per second.
+  - Pay per provisiones Read Capacity Units (RCU) and Write Capacity Units (WCU).
+  - Possibly to add auto-scaling.
+- **On-Demand Mode** 
+  - R/W automatically scale up/down.
+  - No planning needed.
 
-## Dynamo DB Kinesis Data Steams
-- 1 year retention
-- all features of [[Kinesis]]
+## DynamoDB Accelerator (DAX)
+
+- Fully-managed, highly available, in-memory cache for DynamoDB.
+- **Microseconds latency for cached data**.
+- Does not require application logic modification.
+- Default: 5 minutes cache TTL.
+
+## Stream Processing
+
+- Ordered stream of item-level modifications in a table.
+- Use cases:
+  - Reacts to changes in real-time.
+  - Real-time usage analytics.
+  - Insert into derivative tables.
+  - Cross-region replication.
+  - Invoke Lambdas on changes to tables.
+
+### DynamoDB Streams
+
+- 24h retention.
+- Limited # of customers.
+- Process using Lambda Triggers, or DynamoDB Stream Kinesis Adapter.
+
+### Kinesis Data Streams
+
+- (up to) 1 year retention.
+- High # of consumers.
+- Process using [[Lambda]], [[Kinesis]] Data Analytics, [[DataFirehose]], [[Glue]], etc.
 
 ## Global Tables
-- active/active setup for multi region
-- two way replication
-- must enable Streams as prerequiste
+
+- Multi-region, fully replicated tables.
+- Two-way replication.
+- Make a DDB table accessible with **low latency** in multiple-regions.
+- Active-active replication.
+- Can Read/Write to table in any region.
+- Must enable DDB Streams as pre-requisite.
 
 ## Backups
-- automated backups up to 35 days with PITR to restore to new table
-- on demand backups
 
-## Export
-- export import to [[S3]]
+- Continuous backups using point-in-time recovery (PITR).
+  - Recover to any time within the backup window.
+- On-demand backups.
+  - Long term, until explicitly deleted.
+  - Doesn't affect performance.
+  - Can be configured with AWS Backup.
 
-## Security
-- support [[KMS]] Customer Managed Key
+## Integration with [[S3]]
 
-## CLI Created Tabled
-- Autoscaling wont be enabled by default
+- **Export to S3** (must enable PITR).
+  - Works for any point in time in the last 35 days.
+  - Doesn't affect the read capacity of the table.
+  - Export in DDB JSON or ION.
+- **Import from S3**.
+  - Import CSV, DDB JSON or ION files.
+  - Does not consume write capacity.
+  - Creates a new table.
