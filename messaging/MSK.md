@@ -1,20 +1,23 @@
-# Amazon Managed Streaming
-- alternative to Kinesis
-- Fully managed Apache Kafka on AWS
-- cluster
+
+## Overview
+
+- Alternative to [[Kinesis]].
+- Fully managed Apache Kafka cluster on AWS.
+- Deploy cluster in a VPC, multi-AZ.
+- Data stored in [[EBS]] volumes as long as you want.
 
 ## MSK Serverless
-- no provisioning
-- automatic scaling
+
+- No provisioning.
+- Automatic scaling.
 
 ## Diffrence to Kinesis
-- Kinesis 1 MB limit per msg, msk 10 mb
-- kinesis shard, kafka topics
-- kafka doesnt enforce ssl
-- kafka can only add partions to a topic
+
+![[msk_kinesis.png]]
 
 ## Consumers
-- Apps (EC2, ECs, EKS)
-- Kinesis Data ANalytics
-- GLUE
-- Lambda
+
+- [[Flink]].
+- [[Glue]].
+- [[Lambda]].
+- Custom consumer on [[EC2]], [[ECS]], [[EKS]], etc.

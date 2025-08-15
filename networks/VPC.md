@@ -62,7 +62,7 @@ A stack of AWS resources, more clearly the connectivity and setup options for an
 - gives double throughput of virtual private gateway by using ECMP support
 
 ## VPC Sharing
-- share one or more subnets within other accounts beloning to the same [[AWSOrganisations]]
+- share one or more subnets within other accounts beloning to the same [[AWSOrganizations]]
 - every account can only work with the resources they created
 
 ## VPC Flow Logs

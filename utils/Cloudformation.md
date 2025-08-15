@@ -12,7 +12,7 @@ Templates to create [[VPC]] and almost any resource in AWS. Allows to create Inf
 ## Cloudformation StackSets
 - create stacks in AWS accounts across regions using a single Template
 - use the template as the basis for provisioning stacks
-- use with [[AWSOrganisations]]
+- use with [[AWSOrganizations]]
 
 ## Creation Policies
 - **`CreationPolicy`** meanx a resource has to be up an running for the next step to continue

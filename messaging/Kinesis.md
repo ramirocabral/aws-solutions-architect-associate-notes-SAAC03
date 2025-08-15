@@ -7,6 +7,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 - **Consumers**: Applications/Lambdas/Data Firehose/Service for Apache Flink.
 
 ## Features
+
 - Collect and store streaming data in **real-time**.
 - Retention up to 1 year.
 - Reprocess (replay) data by consumers.
@@ -17,7 +18,7 @@ Kinesis is a set of services for streaming real time or next to real time data i
 
 ## Capacity Modes
 
-- **Providioned mode**:
+- **Provisioned mode**:
   - Choose number of shards.(1 shard = 1MB/s in, 2MB/s out)
   - Scale manually to increase/decrease shards.
   - Pay per shard providiones per hour.
@@ -26,5 +27,3 @@ Kinesis is a set of services for streaming real time or next to real time data i
   - Default capacity: 4 MB/s in.
   - Scales based on observed throughput peak during last 30 days.
   - Pay per stream per hour and data in/out per GB.
-
-
