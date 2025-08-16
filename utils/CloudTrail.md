@@ -1,26 +1,32 @@
-# Could Trail for Cloud Watch
-- tracks and logs api requests within the aws account
-- used for governance, complicance, operaational auditing and risk auditing
-- can be used to trigger events on AWS [[EventBride]]
-- enabled by default
-- a trail can be one or all regions
-- stored for 90 days default
-- tranfer to [[S3]] for longer retention 
+![[cloudtrail.png]]
 
-## Management Events
-- Configuring Security 
-- ...
-- enabled by default
-- read and write event types
-## Data Events
-- by default no logged
-- e.g. S3 object level activity
-- read and write event types
+## Overview
 
-## CloudTrail Insights Events:
-- ML
-- Detect unusal activity in write events
-- send to [[S3]] , [[EventBride]] and cloudtrail console
+- Provides governance, compliance and audit for AWS accounts.
+- Enabled by default.
+- Tracks and logs API requests within the aws account.
+- Can put logs on [[CloudWatch]] Logs or [[S3]].
+- A trail can be applied to all regions or a single region.
+- Resource deleted -> Investigate CloudTrail first!
 
-## Security
-- logs are encrypted by default using [[KMS]] AWS Manged keys
+## CloudTrail Features
+
+- **Management Events**:
+  - Operations that are performed on resources in your AWS account.
+  - **By default, trails are configured to log management events**.
+  - **Read events** (don't modify resources) and **Write Events** (may modify resources).
+- **Data Events**:
+  - **By default, not logged**.(becuase of high volume)
+  - Amazon S3 object-level activity.
+  - [[Lambda]] function execution activity.
+- **CloudTrail Insights Events**:
+  - **Detect unusual activity** in your account.
+  - Analyzes normal management events to create a baseline.
+  - Continuosly analyzes write events to detect unusual patterns.
+  - Events are sent to S3.
+  - An EventBridge event is generated.
+
+## Events Retention
+
+- Events are stored for 90 days in CloudTrail.
+- To keep them for longer, can send them to [[S3]] and use [[Athena]] to analyze them.
