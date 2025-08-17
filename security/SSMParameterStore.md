@@ -1,31 +1,36 @@
 # Systems Manager Parameter Store
-- secure storage for configuration and secrets
-- optional encryption using kms
-- serverless
-- easy sdk
-- version tracking
-- configuration management using iam and path
-- notifications with cloudwatch events
-- cloudformation support
+
+- Secure storage for configuration and secrets. ex: db password, api keys, etc.
+- Optional encryption using [[KMS]].
+- Serverless, scalable, easy SDK.
+- Version tracking of configs/secrets.
+- Security through [[IAM]].
+- Notifications with [[EventBridge]].
+
 ## Path
+
 - prod/db/pw e.g.
 
-## Cost
+## Tiers
 
 ### Standard
-- Storage up to 10k parameter free
-- max size 4k
-- no policies
-- higher throughput for api (up to 1k per sec) cost 5 cent per 10k calls
 
-### Advances
+- Up to 10k parameters.
+- Max size KB.
+- No policies.
+- No additional charge.
+- No storage pricing.
+
+### Advanced
+
 - Storage up to 100k
-- max size 8kb
-- policies can be used
-- 0.05 cent per parameter per month
-- thoughput the same as standard
+- Max size KB
+- Policies can be used.
+- 0.05 cent per parameter per month.
+- Thoughput the same as standard.
 
-## Policies
-- assign TTL to a paramter
-- multi policy possible
-- notification possible
+## Parameters Policies
+
+- Assign a TTL to a parameter.
+- Can assign multiple policies at a time.
+- Notifications through [[EventBridge]].

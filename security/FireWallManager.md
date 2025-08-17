@@ -6,7 +6,7 @@ Centraly manage firewall config and rules for [[AWSOrganizations]]
 
 ## Supported Services
 - [[WAF]]
-- [[AWSShield]] Advanced
+- [[Shield]] Advanced
 - [[SecurityGroup]]
 - [[NetworkFirewall]]
 - [[Route53]] DNS Firewall

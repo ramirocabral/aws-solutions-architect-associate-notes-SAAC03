@@ -1,28 +1,36 @@
-# AWS Certifacte Manager
+# AWS Certificate Manager
 
-- used for SSL TLS certificate managedment provision and deploy
-- provide inslight encryption
-- public and private certs
-- automatic renewal
-- cannot be used on ec2
-- will take a few hours to be verified
-- can imported but no automatic renewal
-- certifactes for cloudfront must be in us-east-1
-- for api gateway region needs to be created in same region
+## Overview 
 
-## Integrations
-- [[ELB]]
-- [[Cloudfront]]
-- [[APIGateway]]
+- Manage, provision and deploy SSL Certs.
+- Supports putlic and private certs. (free of charge for public certs)
+- Automatic cert renewal.
+- Can use it with [[ELB]], [[CloudFront]] districutions, [[APIGateway]].
+- Cannot use them with [[EC2]] directly.
 
-## Options
-- FQDN
-- Wildcard
+## Requesting Public Certificates
 
-### Valiation Method
-- DNS
-- Email
+1. List domain names to be included in the cert.
+2. Select DNS or Email validation.
+3. Wait a few hours.
+4. The Public Certificate will be enrolled for automatic renewal. (60 days before expiration)
 
-## Exp Check
-- Daily Expiration Events to Event Bride
-- [[Config]] acm-certifacte-expiration-check
+## Importing Public Certificates
+
+- **No automatic renewal**.
+- ACM sends daily expiration events 45 days prior to expiration in [[EventBridge]].
+- [[Config]] has a managed rule named `acm-certificate-expiration-check` that checks for expiring certs.
+
+## Integration with API Gateway
+
+- Create a **Custom Domain Name** in API Gateway.
+- **Edge-optimized endpoints**.
+  - The TLS cert must be in the same region as CloudFront (us-east-1).
+  - Then setup CNAME or Alias record in Route53.
+- **Regional endpoints**.
+  - The TLS cert must be imported on API Gateway, in the same region as the API Stage.
+
+## IAM certificate Store
+
+- Used for regions where ACM is not available.
+- Can be used via CLI.
