@@ -25,4 +25,4 @@
 
 ## Exp Check
 - Daily Expiration Events to Event Bride
-- [[AWSConfig]] acm-certifacte-expiration-check
+- [[Config]] acm-certifacte-expiration-check

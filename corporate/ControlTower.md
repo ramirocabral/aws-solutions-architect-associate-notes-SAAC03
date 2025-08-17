@@ -1,26 +1,31 @@
 ![[Pasted image 20221031092405.png]]
-# AWS Control Tower
 
 ## TLDR
-Control Tower is often used in conjunction with [[AWSOrganizations]]
-to manage and configure a multi account setup.
+
+Control Tower is often used in conjunction with [[AWSOrganizations]] to manage and configure a multi-account setup.
 
 ## Benefits
-- Automate setup of [[AWSOrganizations]]
-- Automate policy management using guard rails
-- Detect policy viloations
-- Monitor compliance through dashboard
-- Streamline account creation in [[AWSOrganizations]]
+
+- Easy way to **set up and govern** a seure and compliant multi-account AWS enviroment based on best practices.
+- Automate policy management using guard rails.
+- Detect policy violations and remediate them.
+- Monitor compliance through dashboard.
+- Streamline account creation in [[AWSOrganizations]].
 
 ## Guardrails
 
+Ongoing governance for your Control Tower enviroment.
+
 ### Preventive Guardrail
-- uses [[AWSOrganizations]] SCP
-- e.g. restrict regions across all accounts
+
+- Uses [[AWSOrganizations]] SCP.
+- e.g. restrict regions across all accounts.
 
 ### Detective Guardrail
-- uses [[AWSConfig]]
-- e.g. identify untagged resources
+
+- Uses [[Config]].
+- e.g. identify untagged resources.
 
 ## Further Integration
+
 - [[SNS]]

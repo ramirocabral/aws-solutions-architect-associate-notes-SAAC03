@@ -28,3 +28,8 @@
 
 - Permissions from a specific Event Bus.
 - Use case: aggreagate all event from an Organization in a single account or region.
+
+## Security
+
+- **Resource-based policies**: Lambda, SNS, SQS, S3, API Gateway...
+- **IAM Role**: EC2 ASG, Systems Manager Run Command, ECS Task...

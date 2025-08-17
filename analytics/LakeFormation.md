@@ -6,7 +6,7 @@
  - Automates many complex manual steps (using ML transforms).
  - Combines structured and unstructured data.
  - **Out-of-the-box source blueprints:** S3, RDS, Relational and NoSQL databases.
- - **Fine-grained Access  Control for your applications**.
+ - **Fine-grained Access Control for your applications**.
  - Built on top of [[Glue]].
  - Stored in S3.
 
