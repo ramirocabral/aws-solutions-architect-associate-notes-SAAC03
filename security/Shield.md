@@ -1,18 +1,19 @@
 ![[Pasted image 20221101165431.png]]
-# AWS Shield
 
 ## TLDR
+
 Protect your resources from DDOS Attacks.
 
-## Features
-- is enabled by default with no additional cost
-- SYN UDP Floods, Refelction attcks or other layer3 and layer4 attacks
+## Shield Standard
+
+- Enabled by default, no additional cost.
+- SYN/UDP Floods, Reflection attcks or other layer3 and layer4 attacks.
 
 ## AWS Shield Advanced 
-- optional paid service
-- pay per organisation
-- works for [[EC2]], [[ELB]], [[Cloudfront]], [[GlobalAccelerator]] and [[Route53]]
-- 24/7 AWS DDOS Support Team
-- 3k per month cost
-- no higher fees due to ddos fees are nulled (dont pay for increased traffic)
-- automaticly deploys state of the art [[WAF]] rules
+
+- Optional paid service.
+- Pay per organization. 3k per month cost.
+- Works for [[EC2]], [[ELB]], [[CloudFront]], [[GlobalAccelerator]] and [[Route53]].
+- 24/7 AWS DDOS Support Team.
+- No higher fees due to DDoS fees are nulled (dont pay for increased traffic).
+- Automaticly deploys state of the art [[WAF]] rules.

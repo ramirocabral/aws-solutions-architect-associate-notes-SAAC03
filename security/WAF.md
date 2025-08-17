@@ -1,20 +1,22 @@
 ![[Pasted image 20221101171725.png]]
+
 # Web Application Firewall
-- protection against layer 7 exploits (http)
+
+- Protection against L7 exploits (http).
 
 ## Deploy Targets
-- ALB [[ELB]]
-- [[APIGateway]]
-- [[Cloudfront]]
-- AppSync GraphQL API
-- [[Cognito]] User Pool
 
-## Web ACL
-- up to 10k ips per set/rule
-- http heade
-- http body
-- uri strings
-- size constraints
-- geo matching
-- rate based rules
-- rules are region, for [[Cloudfront]] they are global
+- ALB [[ELB]].
+- [[APIGateway]].
+- [[CloudFront]].
+- AppSync GraphQL API.
+- [[Cognito]] User Pool.
+
+## Web ACL Rules
+
+- **IP Set**: up to 10k addresses. Use multiple rules for more IPS.
+- HTTP header, body, or URI strings. **SQL injection and XSS**.
+- Size constraints, **geo-match (block countries)**.
+- **Rate-based rules** (to count occurrennces of events) **DDoS protection**.
+- Web ACLs are Regional except for [[CloudFront]].
+- Rule group -> reusable set of rules that you can add to a web ACL.

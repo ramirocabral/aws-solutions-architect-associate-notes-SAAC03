@@ -1,19 +1,29 @@
 ![[Pasted image 20221101121751.png]]
-# Inspector
-- automatic Security assessments
-- continues scanning of infrastructure
-- package vulns (audit)
-- Network reachability
-- generates Risk Score
+
+## Overview
+
+- **Automatic Security assessments.**
+- Continuous scanning of infrastructure.
+- Package vulns (audit).
+- Uses database of CVE.
+- Generates Risk Score.
 
 ## [[EC2]]
-- useses AWS System Manager Agent
-- anaysle against network access
-- analyse running os against known vulns
 
-## Containers pushed to ecr
-- accessment on containers on puhs
+- Uses [[SSM]] agent.
+- Analyze against **unintended network accessibility**.
+- Analyze running OS against known vulns.
+
+## Containers pushed to ECR
+
+- Assessment on containers on push.
+
+## [[Lambda]] Functions
+
+- Identifies software vulnerabilities in function code and package dependencies.
+- Assessment of functions as they are deployed.
 
 ## Integration
-- AWS Security Hub
-- Send events to event bride
+
+- AWS Security Hub.
+- Send events to [[EventBridge]].
