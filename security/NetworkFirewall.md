@@ -1,20 +1,26 @@
 ![[Pasted image 20221102200252.png]]
-# AWS Network Firewall
 
 ## TLDR
-Firewall for a [[VPC]]
+
+Firewall for a [[VPC]].
 
 ## Features
-- 1000s of rules
-- protocol rules
-- stateful domain list group (e.g. only allow traffic to *.google.com)
-- general pattern matching using regex
-- send logs to [[S3]], [[CloudWatch]] , or [[Kinesis]] firehouse
+
+- 1000s of rules.
+- From L3 to L7.
+- VPC to VPC, outbound, inbound, DX and VPN.
+- Protocol rules.
+- Stateful domain list group (e.g. only allow traffic to *.google.com).
+- Rules can be centrally managed by [[FireWallManager]].
+- General pattern matching using regex.
+- Send logs to [[S3]], [[CloudWatch]] , or [[DataFirehose]].
 
 ## Filter
-- Alow
-- Drop
-- Alert
+
+- Allow.
+- Drop.
+- Alert.
 
 ## Active flow inspection
-- intrusion preventions (Managed by AWS)
+
+- Intrusion preventions (Managed by AWS).

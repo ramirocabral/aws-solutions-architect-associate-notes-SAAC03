@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "security/FireWallManager.md",
+                "file": "networks/VPC.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FireWallManager"
+              "title": "VPC"
             }
           }
         ]
@@ -157,6 +157,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -167,6 +168,19 @@
   },
   "active": "de83062d81c0af68",
   "lastOpenFiles": [
+    "networks/VPC.md~",
+    "security/NetworkFirewall.md~",
+    "attachments/tgw.png",
+    "attachments/vpc_dx_gateway.png",
+    "attachments/vpc_dx.png",
+    "attachments/vpc_cloudhub.png",
+    "attachments/vpc_flow_logs_syntax.png",
+    "attachments/vpc_endpoints.png",
+    "networks/Route53.md",
+    "networks/VPC.md",
+    "attachments/nat_instances.png",
+    "security/FireWallManager.md",
+    "attachments/vpc_bastion_hosts.png",
     "security/HSM.md",
     "security/Inspector.md",
     "security/GuardDuty.md",
@@ -184,34 +198,21 @@
     "scalabily/ELB.md",
     "attachments/guardduty.png",
     "security/GuardDuty.md~",
-    "networks/Route53.md",
     "computing/AMI.md",
     "computing/App2Container.md",
     "computing/AppRunner.md",
     "computing/Batch.md",
     "computing/Proton.md",
     "computing/EC2.md",
-    "security/FireWallManager.md",
     "security/FireWallManager.md~",
     "security/Shield.md~",
     "security/WAF.md~",
     "security/ACM.md~",
     "security/SecretsManager.md~",
     "security/SSMParameterStore.md~",
-    "security/KMS.md~",
     "attachments/kms_ami_sharing.png",
-    "attachments/kms_ddb.png",
     "corporate/AWSOrganizations.md",
-    "attachments/kms.png",
     "access/IAM.md",
-    "corporate/IAM.md",
-    "attachments/iam_identity_center_example.png",
-    "attachments/iam_permissions_evaluation.png",
-    "attachments/iam_permissions_boundaries.png",
-    "attachments/iam_permissions_bondaries.png",
-    "EventBride.md",
-    "attachments/organizations_policies.png",
-    "attachments/organizations_example.png",
-    "databases/Neptune.md"
+    "corporate/IAM.md"
   ]
 }
