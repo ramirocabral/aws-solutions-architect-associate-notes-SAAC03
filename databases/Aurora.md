@@ -105,3 +105,27 @@ Shared with [[RDS]].
 - No code changes required.
 - Enforce IAM authenticacion for DB, and securely store credentials in AWS Secrets Manager.
 - **Never public accesible**. Must be accessed from a VPC.
+
+## Migrations
+
+**Use DMS if both dbs are up and running**.
+
+### RDS MySQL to Aurora MySQL
+
+- Option 1: DB Snapshot from RDS MySQL -> Restore to Aurora MySQL.
+- Option 2: Create Aurora Read Replica from RDS MySQL, and when the replication lag is 0, promote it as its own DB cluster. (but more time and cost $)
+
+### External MySQL to Aurora MySQL
+
+- Option 1: Use Percona XtraBackup to create a backup file in [[S3]]. Create a Aurora MySQL from S3.
+- Option 2: Create an Aurora MySQL DB. Use the mysqldump to migrate MySQL into Aurora.(slower).
+
+### RDS PostgreSQL to Aurora PostgreSQL
+
+- Option 1: DB Snapshot from RDS PostgreSQL -> Restore to Aurora PostgreSQL.
+- Option 2: Create Aurora Read Replica from RDS PostgreSQL, and when the replication lag is 0, promote it as its own DB cluster. (but more time and cost $)
+
+### External PostgreSQL to Aurora PostgreSQL
+
+- Create a backup and put it in [[S3]].
+- Import it using the `aws_s3` Aurora extension.

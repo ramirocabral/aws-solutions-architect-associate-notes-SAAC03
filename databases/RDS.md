@@ -93,3 +93,17 @@
 - Don't have any info about the data itself.
 - Near real-time events.
 - Send to [[SNS]] or subscribe to events with [[EventBridge]].
+
+## Migrations
+
+**Use DMS if both dbs are up and running**.
+
+### RDS MySQL to Aurora MySQL
+
+- Option 1: DB Snapshot from RDS MySQL -> Restore to Aurora MySQL.
+- Option 2: Create Aurora Read Replica from RDS MySQL, and when the replication lag is 0, promote it as its own DB cluster. (but more time and cost $)
+
+### External MySQL to Aurora MySQL
+
+- Option 1: Use Percona XtraBackup to create a backup file in [[S3]]. Create a Aurora MySQL from S3.
+- Option 2: Create an Aurora MySQL DB. Use the mysqldump to migrate MySQL into Aurora.(slower).
