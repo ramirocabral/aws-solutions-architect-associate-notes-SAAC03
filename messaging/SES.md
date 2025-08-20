@@ -1,11 +1,11 @@
-# Simple Email Service
+## Overview
 
-- fully managed global email service
-- allows inbound and outbound
-- dashboard features
-- anti spam
-- staticstics
-- DKIM (DomainKeys Identified Maik)
-- Sender Policy Framework (SPF)
-- flexible IP Deployment, shared ip, dedicated ip etc (send from specific ip adress)
-- Send Email from console api or smtp
+- Fully managed global email service.
+- Allows inbound and outbound.
+- Dashboard features.
+- Anti spam.
+- Staticstics.
+- DKIM (DomainKeys Identified Mail).
+- Sender Policy Framework (SPF).
+- Flexible IP Deployment, shared IP, dedicated IP etc (send from specific ip adress).
+- Send Email from console, AIP or SMTP.

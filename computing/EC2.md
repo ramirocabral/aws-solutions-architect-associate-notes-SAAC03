@@ -184,6 +184,11 @@ Logical component in a [[VPC]], represents a Virtual Network Card.
 
 Each instances has a primary ENI (can't detach it), but you can create more ENIs and attach them.
 
+## EC2 Instance Connect
+
+- Must have port 22 open in the [[SecurityGroup]].
+- No need to use key pairs, since a temporary SSH key is generated.
+
 ## EC2 Hibernate
 
 ![[instance_lifecycle.png]]
@@ -204,6 +209,18 @@ Each instances has a primary ENI (can't detach it), but you can create more ENIs
 ## Limits
 
 - By default your account has a maximum limit for ec2 instances based on the total vcpu used, you can submit a request to increase that limit
+
+## EC2 Enhanced Networking (SR-IOV)
+
+- **Option 1**: **Elastic Network Adapter (ENA)** up to 100Gbps.
+- **Option 2**: **Intel 82599 VF** up to 10Gbps. (legacy)
+
+## Elastic Fabric Adapter (EFA)
+
+- Improved ENA for HPC, only for Linux.
+- Great for inter-node comms, **tightly coupled workloads**.
+- MPI standard.
+- Bypasses the LinuxOS.
 
 --- 
 

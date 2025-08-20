@@ -24,13 +24,13 @@
 ## Endpoint Types
 
 ### Edge Optimized (default)
-- Routed through [[Cloudfront]] Edge Locations.
+- Routed through [[CloudFront]] Edge Locations.
 - The API Gateway still lives in only one region.
 - For global clients.
 
 ### Regional
 - Clients within the same region.
-- Manually combine with [[Cloudfront]] for more control.
+- Manually combine with [[CloudFront]] for more control.
 
 ### Private
 - Only from within your [[VPC]].
