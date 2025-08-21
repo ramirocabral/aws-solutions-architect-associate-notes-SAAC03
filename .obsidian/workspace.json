@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computing/Amplify.md",
+                "file": "cost_management/TrustedAdvisor.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Amplify"
+              "title": "TrustedAdvisor"
             }
           }
         ]
@@ -168,6 +168,8 @@
   },
   "active": "6ee2ae0478dcbd6f",
   "lastOpenFiles": [
+    "cost_management/TrustedAdvisor.md~",
+    "computing/Amplify.md",
     "well_architected_framework/Pillars.md~",
     "utils/Cloudformation.md~",
     "utils/InstanceScheduler.md~",
@@ -175,15 +177,12 @@
     "computing/Amplify.md~",
     "computing/EC2.md",
     "attachments/amplify.png",
-    "computing/Amplify.md",
     "data_transfer/AppFlow.md~",
     "computing/Batch.md~",
     "utils/OnPremise.md~",
     "cost_management/CostAnomallyDetector.md~",
     "cost_management/CostAnomallyDetector.md",
     "cost_management/CostExplorer.md~",
-    "cost_management/AWSBilling.md~",
-    "corporate/SystemsManager.md~",
     "utils/OnPremise.md",
     "networks/SecurityGroup.md",
     "utils/Backup.md",

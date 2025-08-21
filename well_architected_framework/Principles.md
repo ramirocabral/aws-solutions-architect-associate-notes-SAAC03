@@ -1,21 +1,19 @@
-# Principles
+## Principles
 
-## Stop guessing
-- scale capacity 
+- Stop guessing your capacity needs.
+- Test systems at production scale.
+- Automate to make architectural experimentation easier.
+- Allow for evolutionary architectures.
+- Drive architectures using data.
+- Improve through game days: e.g simulate apps for flash sale days.
 
-## Test at prod scale
-- test and then decomission
+## Pillars
 
-## Automate
-- automate everything you can
-- track changes in automation
+1. Operational Excellence
+2. Security
+3. Reliability
+4. Performance Efficiency
+5. Cost Optimization
+6. Sustainability
 
-## Allow for change
-- bussiness can grow and change
-- dont use static infrastructure
-
-## Use Data for your decisions
-- use data to make fact based decisions
-
-## Do Game Days
-- simulate events in production
+They are not something to balance or trade-offs, they're a sinergy.
